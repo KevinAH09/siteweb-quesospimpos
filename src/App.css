@@ -380,6 +380,46 @@ nav {
   margin-top: 0.55rem;
 }
 
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  padding: 2.5rem 0;
+}
+
+.mission-box,
+.vision-box {
+  background: var(--white);
+  border: 1px solid #ddd4bf;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.mission-box .icon,
+.vision-box .icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.mission-box h3,
+.vision-box h3 {
+  margin: 0 0 0.8rem;
+  color: var(--green);
+  font-size: 1.3rem;
+}
+
+.mission-box p,
+.vision-box p {
+  margin: 0;
+  line-height: 1.6;
+}
+
 .inner-hero {
   min-height: 300px;
   display: flex;

@@ -178,18 +178,43 @@ function NosotrosPage() {
   return (
     <>
       <PageBanner title="Nosotros" />
-      <section className="container simple-column">
-        <p>
-          En Quesos Pimpos creemos en una lecheria cercana, responsable y con sabor autentico. Trabajamos junto a productores locales para garantizar materia prima fresca y procesos cuidados de principio a fin.
-        </p>
-        <h2>Mision</h2>
-        <p>
-          Producir y distribuir lacteos de alta calidad para hogares y negocios, manteniendo una relacion honesta con clientes, equipo y comunidad.
-        </p>
-        <h2>Vision</h2>
-        <p>
-          Ser una marca regional referente en confianza, sabor y servicio, destacando por nuestra constancia operativa y trato humano.
-        </p>
+      <section className="container intro-grid">
+        <article className="intro-copy">
+          <p className="eyebrow">Nuestra Historia</p>
+          <h2>Una Tradición Familiar de Excelencia Láctea</h2>
+          <p>
+            Desde hace más de 20 años, Quesos Pimpos ha sido sinónimo de calidad y confianza en la región. 
+            Comenzamos como una pequeña granja familiar con la visión de llevar productos lácteos frescos 
+            y naturales directamente a las mesas de las familias locales.
+          </p>
+          <p>
+            A lo largo de los años, hemos crecido manteniendo nuestros valores fundamentales: 
+            el respeto por la tierra, el cuidado de nuestros animales y el compromiso con la comunidad. 
+            Cada litro de leche, cada queso artesanal, lleva consigo esta historia de dedicación y pasión.
+          </p>
+        </article>
+        <div className="intro-gallery">
+          <img src="https://images.unsplash.com/photo-1594761051656-6126f5c25f3e?auto=format&fit=crop&w=700&q=80" alt="Nuestra granja familiar" />
+          <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=700&q=80" alt="Proceso artesanal de nuestros productos" />
+        </div>
+      </section>
+      <section className="container mission-vision-grid">
+        <article className="mission-box">
+          <div className="icon">M</div>
+          <h3>Misión</h3>
+          <p>
+            Producir y distribuir lácteos de alta calidad para hogares y negocios, 
+            manteniendo una relación honesta con clientes, equipo y comunidad.
+          </p>
+        </article>
+        <article className="vision-box">
+          <div className="icon">V</div>
+          <h3>Visión</h3>
+          <p>
+            Ser una marca regional referente en confianza, sabor y servicio, 
+            destacando por nuestra constancia operativa y trato humano.
+          </p>
+        </article>
       </section>
       <section className="image-cta-section">
         <div className="image-cta-overlay" />
