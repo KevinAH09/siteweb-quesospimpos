@@ -2,57 +2,57 @@ import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 const homeData = {
-  kicker: 'Pure Dairy Farm',
-  heroTitle: 'Nourishing Families With Pure Dairy Goodness',
+  kicker: 'Quesos Pimpos',
+  heroTitle: 'El sabor auténtico del campo en su mesa.',
   heroText:
-    'Fresh milk straight from our pasture to your table. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-  introTitle: 'Fresh Milk Straight From Our Pasture To Your Table',
+    'Llevamos más de 20 años transformando la pureza de San Antonio de Rivas en productos lácteos frescos y naturales. De nuestra finca a su familia, con el compromiso de una producción honesta.',
+  introTitle: 'Nuestra Historia',
   introText:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae blandit orci, in semper velit. Integer vulputate sem id eros fermentum, vitae bibendum lectus malesuada.',
+    'Todo comenzó en el año 2000, cuando José Acuña Hernández inició este camino con apenas seis vacas y el trabajo dedicado del ordeño a mano. Lo que empezó como un pequeño esfuerzo personal en San Antonio de Rivas, ha crecido gracias a la constancia y al amor por la tierra.',
   introPoints: [
-    'Recommended for family kitchens and local stores',
-    'High quality fresh milk with daily control',
-    'Simple traceability from farm to table'
+    'Producción responsable y trazable',
+    'Finca en transición hacia prácticas ecológicas',
+    'Entrega directa sin intermediarios'
   ],
-  processTitle: 'Farm Process That Protects Quality',
+  processTitle: 'Proceso y Calidad',
   processText:
-    'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Quis autem vel eum iure reprehenderit.',
-  processSteps: ['Take raw milk every morning', 'Storage and cooling control', 'Pure farming process inspection', 'Consistent delivery logistics'],
-  impactTitle: 'Strategies To Improve Efficiency And Reduce Operational Costs',
+    'Mantenemos controles sencillos y rigurosos para garantizar frescura y sabor en cada entrega.',
+  processSteps: ['Ordeño matutino', 'Enfriamiento y almacenamiento', 'Producción artesanal', 'Distribución semanal'],
+  impactTitle: 'Eficiencia y Servicio',
   impactText:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  supportTitle: 'Get In Touch Today For Trusted Dairy Product Support',
+    'Trabajamos con foco en calidad, sostenibilidad y trato directo con nuestros clientes.',
+  supportTitle: 'Pida frescura, reciba calidad.',
   supportText:
-    'Tell us your volume and schedule. We coordinate weekly supply for homes, cafes and restaurants with clear communication.',
-  productsTitle: 'Explore Our Range Of Fresh And Nutritious Dairy Products',
+    'Atendemos hogares, pulperías y negocios locales con entregas semanales programadas.',
+  productsTitle: 'Gama de Productos',
   products: [
-    { icon: 'FM', name: 'Fresh Milk', text: 'Whole and light formats for daily consumption.' },
-    { icon: 'QC', name: 'Quality Cheese', text: 'Soft and semi hard options for every recipe.' },
-    { icon: 'PC', name: 'Pure Cream', text: 'Rich texture for bakery, sauces and desserts.' },
-    { icon: 'HD', name: 'Home Delivery', text: 'Reliable weekly dispatch in your area.' }
+    { icon: 'LF', name: 'Leche Fresca', text: 'La pureza de la mañana en presentaciones: 1L, 1.5L, 2L y 3L.' },
+    { icon: 'LA', name: 'Leche Agria', text: 'Textura y acidez ideal para acompañar comidas. Formatos: 1L, 1.5L, 2L y 3L.' },
+    { icon: 'QT', name: 'Queso Tierno', text: 'Elaborado artesanalmente cada día. Venta por kilogramo.' },
+    { icon: 'NT', name: 'Natilla de la Casa', text: 'Cremosa y con el sabor tradicional. Formatos: 250g y 500g.' }
   ],
-  promoTitle: "Don't Miss Out Enjoy Up To 20% Off Today!",
+  promoTitle: 'Ver Productos',
   testimonials: [
     {
       author: 'Isabella Romero',
-      role: 'Cafe Owner',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+      role: 'Dueña de pulpería',
+      text: 'La frescura y el servicio directo nos permite ofrecer calidad constante a nuestros clientes.'
     },
     {
       author: 'Ryan Molina',
-      role: 'Family Buyer',
-      text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
+      role: 'Cliente familiar',
+      text: 'Productos con sabor casero y entrega puntual cada semana.'
     }
   ]
 };
 
 function PageBanner({ title }) {
   return (
-    <section className="inner-hero">
+    <section className="inner-hero head-breadcrumbs">
       <div className="container">
         <h1>{title}</h1>
         <p className="crumbs">
-          <Link to="/">Home</Link>
+          <Link to="/">Inicio</Link>
           <span>/</span>
           <strong>{title}</strong>
         </p>
@@ -69,7 +69,7 @@ function HomePage() {
           <p className="eyebrow">{homeData.kicker}</p>
           <h1>{homeData.heroTitle}</h1>
           <p>{homeData.heroText}</p>
-          <button className="main-cta" type="button">Get Started</button>
+          <Link className="main-cta" to="/productos">Ver Productos</Link>
         </div>
         <div className="wave" />
       </section>
@@ -88,6 +88,26 @@ function HomePage() {
         <div className="intro-gallery">
           <img src="https://images.unsplash.com/photo-1594761051656-6126f5c25f3e?auto=format&fit=crop&w=700&q=80" alt="Equipo de lecheria" />
           <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=700&q=80" alt="Vacas en la finca" />
+        </div>
+      </section>
+
+      <section className="products-zone">
+        <div className="container">
+          <h2>Lo que nos diferencia</h2>
+          <div className="icon-grid">
+            <article>
+              <h3>Tradición desde el 2000</h3>
+              <p>Experiencia que se traduce en confianza y sabor auténtico.</p>
+            </article>
+            <article>
+              <h3>Visión Ecológica</h3>
+              <p>Trabajamos para ser una finca amigable con el entorno.</p>
+            </article>
+            <article>
+              <h3>Trato Directo</h3>
+              <p>Sin intermediarios, del productor al consumidor final.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -181,16 +201,12 @@ function NosotrosPage() {
       <section className="container intro-grid">
         <article className="intro-copy">
           <p className="eyebrow">Nuestra Historia</p>
-          <h2>Una Tradición Familiar de Excelencia Láctea</h2>
+          <h2>De 6 vacas a un sueño familiar sostenible</h2>
           <p>
-            Desde hace más de 20 años, Quesos Pimpos ha sido sinónimo de calidad y confianza en la región. 
-            Comenzamos como una pequeña granja familiar con la visión de llevar productos lácteos frescos 
-            y naturales directamente a las mesas de las familias locales.
+            Todo comenzó en el año 2000, cuando José Acuña Hernández inició este camino con apenas seis vacas y el trabajo dedicado del ordeño a mano. Lo que empezó como un pequeño esfuerzo personal en San Antonio de Rivas, ha crecido gracias a la constancia y al amor por la tierra.
           </p>
           <p>
-            A lo largo de los años, hemos crecido manteniendo nuestros valores fundamentales: 
-            el respeto por la tierra, el cuidado de nuestros animales y el compromiso con la comunidad. 
-            Cada litro de leche, cada queso artesanal, lleva consigo esta historia de dedicación y pasión.
+            Hoy, con más de 20 vacas en producción, en Quesos Pimpos no solo buscamos ofrecer la mejor calidad; estamos evolucionando hacia un modelo de finca ecológica. Creemos en el respeto al medio ambiente y al bienestar animal como el único camino para garantizar un producto nutritivo y con el sabor de verdad.
           </p>
         </article>
         <div className="intro-gallery">
@@ -232,12 +248,10 @@ function NosotrosPage() {
 
 function ProductosPage() {
   const productGallery = [
-    { title: 'Queso Fresco', image: 'https://images.unsplash.com/photo-1552767059-ce182ead6c1b?auto=format&fit=crop&w=900&q=80' },
-    { title: 'Queso Semiduro', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=900&q=80' },
-    { title: 'Natilla Artesanal', image: 'https://images.unsplash.com/photo-1634141510639-d691d86f47be?auto=format&fit=crop&w=900&q=80' },
-    { title: 'Crema De Leche', image: 'https://images.unsplash.com/photo-1585238341986-6de4cc9a58d1?auto=format&fit=crop&w=900&q=80' },
-    { title: 'Combo Familiar', image: 'https://images.unsplash.com/photo-1626201850127-a96f9f9f2dfe?auto=format&fit=crop&w=900&q=80' },
-    { title: 'Linea Negocios', image: 'https://images.unsplash.com/photo-1600289031463-74df60fa7038?auto=format&fit=crop&w=900&q=80' }
+    { title: 'Leche Fresca', image: 'https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=900&q=80', description: 'La pureza de la mañana en presentaciones para cada necesidad.', formats: '1L, 1.5L, 2L, 3L' },
+    { title: 'Leche Agria', image: 'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=900&q=80', description: 'El acompañamiento perfecto para sus comidas, con la textura y acidez ideal.', formats: '1L, 1.5L, 2L, 3L' },
+    { title: 'Queso Tierno', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80', description: 'Elaborado artesanalmente cada día. Frescura que se siente en cada bocado.', formats: 'Venta por kilogramo' },
+    { title: 'Natilla de la Casa', image: 'https://images.unsplash.com/photo-1615484475515-0c9c4d39b2e0?auto=format&fit=crop&w=900&q=80', description: 'Cremosa y con el sabor tradicional de la zona.', formats: '250g, 500g' }
   ];
 
   return (
@@ -249,6 +263,8 @@ function ProductosPage() {
             <article key={item.title}>
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <small>{item.formats}</small>
             </article>
           ))}
         </div>
@@ -273,14 +289,12 @@ function ContactoPage() {
       <PageBanner title="Contacto" />
       <section className="container contact-page">
         <article className="contact-info">
-          <h2>Informacion De Contacto</h2>
-          <p><strong>Telefono:</strong> +506 8888-8888</p>
-          <p><strong>Correo:</strong> contacto@quesospimpos.com</p>
-          <p><strong>Horario:</strong> Lunes a Sabado, 7:00 AM - 5:00 PM</p>
-          <p><strong>Direccion:</strong> San Jose, Costa Rica</p>
-          <p>
-            Atendemos pedidos para hogares, restaurantes y comercios. Nuestro equipo responde rapido por WhatsApp y correo.
-          </p>
+          <h2>Pida frescura, reciba calidad.</h2>
+          <p>Atendemos hogares, pulperías y negocios locales con entregas semanales programadas.</p>
+          <p><strong>Horario:</strong> Lunes a Domingo de 6:00 AM a 6:00 PM</p>
+          <p><strong>Ubicación:</strong> San Antonio de Rivas, Pérez Zeledón</p>
+          <p><strong>WhatsApp/Tel:</strong> +506 5715-1979</p>
+          <p><strong>Correo:</strong> joseacuna794@gmail.com</p>
         </article>
 
         <form className="contact-form">
@@ -301,7 +315,7 @@ function ContactoPage() {
       <section className="container map-wrap">
         <iframe
           title="Ubicacion de Quesos Pimpos"
-          src="https://www.google.com/maps?q=San+Jose+Costa+Rica&output=embed"
+          src="https://www.google.com/maps?q=San+Antonio+de+Rivas+Perez+Zeledon+Costa+Rica&output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
@@ -317,7 +331,7 @@ function SiteLayout() {
         <Link to="/" className="brand">Quesos Pimpos</Link>
         <nav aria-label="Navegacion principal">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} end>
-            Home
+            Inicio
           </NavLink>
           <NavLink to="/nosotros" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')}>
             Nosotros
@@ -348,16 +362,16 @@ function SiteLayout() {
           </div>
           <div>
             <h4>Quick Links</h4>
-            <p>Home</p>
+            <p>Inicio</p>
             <p>Nosotros</p>
             <p>Productos</p>
             <p>Contacto</p>
           </div>
           <div>
-            <h4>On The Farm</h4>
-            <p>Phone: +506 8888-8888</p>
-            <p>Email: contacto@quesospimpos.com</p>
-            <p>San Jose, Costa Rica</p>
+            <h4>Contacto</h4>
+            <p>Teléfono y WhatsApp: +506 57151979</p>
+            <p>Correo: joseacuna794@gmail.com</p>
+            <p>San Antonio de Rivas, Pérez Zeledón</p>
           </div>
         </div>
         <p className="copyright">(c) {new Date().getFullYear()} Quesos Pimpos. All rights reserved.</p>

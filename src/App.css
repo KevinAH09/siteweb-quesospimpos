@@ -447,6 +447,27 @@ nav {
   color: #d7f1dd;
 }
 
+/* Estilo para usar imagen localizada en src/assets/images/head-titles.webp
+   Aplicar la clase `head-breadcrumbs` al contenedor de las migas (breadcrumbs). */
+.head-breadcrumbs {
+  background-image: url('./assets/images/head-titles.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Regla específica para reemplazar el fondo de .inner-hero cuando se añade la clase head-breadcrumbs */
+.inner-hero.head-breadcrumbs {
+  background-image: linear-gradient(100deg, rgba(13, 79, 45, 0.75), rgba(13, 79, 45, 0.45)),
+    url('./assets/images/head-titles.webp');
+  background-position: center;
+  background-size: cover;
+  color: #f3fff4;
+}
+
 .simple-column {
   padding: 2.2rem 0 3rem;
   max-width: 760px;
