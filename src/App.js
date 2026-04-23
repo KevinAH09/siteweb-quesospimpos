@@ -1,5 +1,12 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
+import vacas2 from './assets/images/nosotros/vacas-2.webp';
+import potrero4 from './assets/images/nosotros/potrero-4.webp';
+import queso3 from './assets/images/productos/queso-3.webp';
+import leche4 from './assets/images/productos/leche-4.webp';
+import slide1 from './assets/images/slide-1.webp';
+import headTitles from './assets/images/head-titles.webp';
 
 const homeData = {
   kicker: 'Quesos Pimpos',
@@ -26,10 +33,10 @@ const homeData = {
     'Atendemos hogares, pulperías y negocios locales con entregas semanales programadas.',
   productsTitle: 'Gama de Productos',
   products: [
-    { icon: 'LF', name: 'Leche Fresca', text: 'La pureza de la mañana en presentaciones: 1L, 1.5L, 2L y 3L.' },
-    { icon: 'LA', name: 'Leche Agria', text: 'Textura y acidez ideal para acompañar comidas. Formatos: 1L, 1.5L, 2L y 3L.' },
-    { icon: 'QT', name: 'Queso Tierno', text: 'Elaborado artesanalmente cada día. Venta por kilogramo.' },
-    { icon: 'NT', name: 'Natilla de la Casa', text: 'Cremosa y con el sabor tradicional. Formatos: 250g y 500g.' }
+    { iconClass: 'fas fa-mug-saucer', name: 'Leche Fresca', text: 'La pureza de la mañana en presentaciones: 1L, 1.5L, 2L y 3L.' },
+    { iconClass: 'fas fa-vial', name: 'Leche Agria', text: 'Textura y acidez ideal para acompañar comidas. Formatos: 1L, 1.5L, 2L y 3L.' },
+    { iconClass: 'fas fa-cheese', name: 'Queso Tierno', text: 'Elaborado artesanalmente cada día. Venta por kilogramo.' },
+    { iconClass: 'fas fa-ice-cream', name: 'Natilla de la Casa', text: 'Cremosa y con el sabor tradicional. Formatos: 250g y 500g.' }
   ],
   promoTitle: 'Ver Productos',
   testimonials: [
@@ -64,9 +71,10 @@ function PageBanner({ title }) {
 function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${slide1})` }}>
+        <div className="hero-overlay" />
         <div className="hero-inner container">
-          <p className="eyebrow">{homeData.kicker}</p>
+          <p className="eyebrow kicker">{homeData.kicker}</p>
           <h1>{homeData.heroTitle}</h1>
           <p>{homeData.heroText}</p>
           <Link className="main-cta" to="/productos">Ver Productos</Link>
@@ -86,8 +94,8 @@ function HomePage() {
           </ul>
         </article>
         <div className="intro-gallery">
-          <img src="https://images.unsplash.com/photo-1594761051656-6126f5c25f3e?auto=format&fit=crop&w=700&q=80" alt="Equipo de lecheria" />
-          <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=700&q=80" alt="Vacas en la finca" />
+          <img src={vacas2} alt="Equipo de lecheria" />
+          <img src={potrero4} alt="Vacas en la finca" />
         </div>
       </section>
 
@@ -117,7 +125,7 @@ function HomePage() {
             <p className="eyebrow light">Our Service</p>
             <h2>{homeData.processTitle}</h2>
             <p>{homeData.processText}</p>
-            <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=800&q=80" alt="Proceso de extraccion" />
+            <img src={headTitles} alt="Proceso de extraccion" />
           </div>
           <ol>
             {homeData.processSteps.map((step, index) => (
@@ -137,13 +145,13 @@ function HomePage() {
           <h2>{homeData.impactTitle}</h2>
           <p>{homeData.impactText}</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1000&q=80" alt="Control de calidad" />
+        <img src={leche4} alt="Control de calidad" />
       </section>
 
       <section className="pasture-banner" aria-label="paisaje de finca" />
 
       <section className="container support-grid">
-        <img src="https://images.unsplash.com/photo-1566583658635-1f3b2f3f7f2b?auto=format&fit=crop&w=900&q=80" alt="Soporte en la granja" />
+        <img src={queso3} alt="Soporte en la granja" />
         <div>
           <p className="eyebrow">Support</p>
           <h2>{homeData.supportTitle}</h2>
@@ -157,8 +165,8 @@ function HomePage() {
           <h2>{homeData.productsTitle}</h2>
           <div className="icon-grid">
             {homeData.products.map((item) => (
-              <article key={item.name}>
-                <div className="icon">{item.icon}</div>
+            <article key={item.name}>
+                <div className="icon"><i className={item.iconClass} aria-hidden="true" /></div>
                 <h3>{item.name}</h3>
                 <p>{item.text}</p>
               </article>
@@ -174,22 +182,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="container testimonial-zone">
-        <div>
-          <p className="eyebrow">What Clients Say</p>
-          <h2>Real Feedback From Families And Businesses</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis eros vitae sem vulputate, at cursus justo condimentum.</p>
-        </div>
-        <div className="quotes">
-          {homeData.testimonials.map((item) => (
-            <article key={item.author}>
-              <p>{item.text}</p>
-              <h4>{item.author}</h4>
-              <small>{item.role}</small>
-            </article>
-          ))}
-        </div>
-      </section>
+      {/* Testimonial section removed as requested */}
     </>
   );
 }
@@ -210,13 +203,13 @@ function NosotrosPage() {
           </p>
         </article>
         <div className="intro-gallery">
-          <img src="https://images.unsplash.com/photo-1594761051656-6126f5c25f3e?auto=format&fit=crop&w=700&q=80" alt="Nuestra granja familiar" />
-          <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=700&q=80" alt="Proceso artesanal de nuestros productos" />
+          <img src={vacas2} alt="Nuestra granja familiar" />
+          <img src={potrero4} alt="Proceso artesanal de nuestros productos" />
         </div>
       </section>
       <section className="container mission-vision-grid">
         <article className="mission-box">
-          <div className="icon">M</div>
+          <div className="icon"><i className="fas fa-bullseye" aria-hidden="true" /></div>
           <h3>Misión</h3>
           <p>
             Producir y distribuir lácteos de alta calidad para hogares y negocios, 
@@ -224,7 +217,7 @@ function NosotrosPage() {
           </p>
         </article>
         <article className="vision-box">
-          <div className="icon">V</div>
+          <div className="icon"><i className="fas fa-eye" aria-hidden="true" /></div>
           <h3>Visión</h3>
           <p>
             Ser una marca regional referente en confianza, sabor y servicio, 
@@ -248,10 +241,10 @@ function NosotrosPage() {
 
 function ProductosPage() {
   const productGallery = [
-    { title: 'Leche Fresca', image: 'https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=900&q=80', description: 'La pureza de la mañana en presentaciones para cada necesidad.', formats: '1L, 1.5L, 2L, 3L' },
-    { title: 'Leche Agria', image: 'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=900&q=80', description: 'El acompañamiento perfecto para sus comidas, con la textura y acidez ideal.', formats: '1L, 1.5L, 2L, 3L' },
-    { title: 'Queso Tierno', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80', description: 'Elaborado artesanalmente cada día. Frescura que se siente en cada bocado.', formats: 'Venta por kilogramo' },
-    { title: 'Natilla de la Casa', image: 'https://images.unsplash.com/photo-1615484475515-0c9c4d39b2e0?auto=format&fit=crop&w=900&q=80', description: 'Cremosa y con el sabor tradicional de la zona.', formats: '250g, 500g' }
+    { title: 'Leche Fresca', image: leche4, description: 'La pureza de la mañana en presentaciones para cada necesidad.', formats: '1L, 1.5L, 2L, 3L' },
+    { title: 'Leche Agria', image: leche4, description: 'El acompañamiento perfecto para sus comidas, con la textura y acidez ideal.', formats: '1L, 1.5L, 2L, 3L' },
+    { title: 'Queso Tierno', image: queso3, description: 'Elaborado artesanalmente cada día. Frescura que se siente en cada bocado.', formats: 'Venta por kilogramo' },
+    { title: 'Natilla de la Casa', image: queso3, description: 'Cremosa y con el sabor tradicional de la zona.', formats: '250g, 500g' }
   ];
 
   return (
@@ -325,21 +318,29 @@ function ContactoPage() {
 }
 
 function SiteLayout() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="site-shell">
       <header className="topbar">
         <Link to="/" className="brand">Quesos Pimpos</Link>
-        <nav aria-label="Navegacion principal">
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} end>
+        <button className={`hamburger ${menuOpen ? 'is-open' : ''}`} aria-label="Abrir menu" onClick={() => setMenuOpen((s) => !s)}>
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className={menuOpen ? 'nav mobile-open' : 'nav'} aria-label="Navegacion principal">
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} end onClick={() => setMenuOpen(false)}>
             Inicio
           </NavLink>
-          <NavLink to="/nosotros" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')}>
+          <NavLink to="/nosotros" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} onClick={() => setMenuOpen(false)}>
             Nosotros
           </NavLink>
-          <NavLink to="/productos" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')}>
+          <NavLink to="/productos" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} onClick={() => setMenuOpen(false)}>
             Productos
           </NavLink>
-          <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')}>
+          <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')} onClick={() => setMenuOpen(false)}>
             Contacto
           </NavLink>
         </nav>
@@ -382,7 +383,7 @@ function SiteLayout() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <SiteLayout />
     </BrowserRouter>
   );
