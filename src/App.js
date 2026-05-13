@@ -3,11 +3,13 @@ import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-
 import './App.css';
 import vacas2 from './assets/images/nosotros/vacas-2.webp';
 import potrero4 from './assets/images/nosotros/potrero-4.webp';
+import vacas7 from './assets/images/vacas-7.webp';
+import vacas8 from './assets/images/vacas-8.webp';
 import queso3 from './assets/images/productos/queso-3.webp';
 import leche4 from './assets/images/productos/leche-4.webp';
 import slide1 from './assets/images/slide-1.webp';
 import slide3 from './assets/images/slide-3.webp';
-import headTitles from './assets/images/head-titles.webp';
+import vacas5 from './assets/images/vacas-5.webp';
 import shapeDivisor from './assets/images/shape-divisor.webp';
 import waveBage from './assets/images/wave-bage.svg';
 import waveVerde from './assets/images/wave-verde.svg';
@@ -43,10 +45,10 @@ const homeData = {
     'Atendemos hogares, pulperías y negocios con entregas semanales programadas en Pérez Zeledón.',
   productsTitle: 'Nuestro catálogo de productos',
   products: [
-    { iconClass: 'fas fa-mug-saucer', name: 'Leche Entera Natural', text: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional. Presentaciones: 1L, 1.5L, 2L y 3L.' },
+    { iconClass: 'fas fa-cow', name: 'Leche Entera Natural', text: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional. Presentaciones: 1L, 1.5L, 2L y 3L.' },
     { iconClass: 'fas fa-cheese', name: 'Queso Tierno Artesanal', text: 'Elaborado diariamente con leche entera de calidad y prensado en frío. Venta por kilogramo.' },
-    { iconClass: 'fas fa-ice-cream', name: 'Natilla de la Casa', text: 'Receta familiar 100% natural y libre de químicos. Presentaciones: 250g y 500g.' },
-    { iconClass: 'fas fa-vial', name: 'Leche Agria Tradicional', text: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo. Presentaciones: 1L, 1.5L, 2L y 3L.' }
+    { iconClass: 'fas fa-bowl-food', name: 'Natilla de la Casa', text: 'Receta familiar 100% natural y libre de químicos. Presentaciones: 250g y 500g.' },
+    { iconClass: 'fas fa-blender', name: 'Leche Agria Tradicional', text: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo. Presentaciones: 1L, 1.5L, 2L y 3L.' }
   ],
   promoTitle: 'Explorar productos',
   testimonials: [
@@ -67,6 +69,22 @@ const heroSlides = [
   { image: slide1, label: 'Finca de Quesos Pimpos' },
   { image: slide3, label: 'Productos frescos de Quesos Pimpos' }
 ];
+
+const NOSOTROS_GALLERY_FILES = [
+  'vacas-1.webp',
+  'vacas-4.webp',
+  'vacas-5.webp',
+  'vacas-7.webp',
+  'vacas-8.webp',
+  'potrero-4.webp',
+  'potrero-5.webp',
+  'leche-5.webp'
+];
+
+function nosotrosGalleryImageSrc(filename) {
+  const root = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+  return `${root}/imagenes/${filename}`;
+}
 
 const waveDividers = {
   beige: waveBage,
@@ -160,12 +178,32 @@ function HomePage() {
           <p className="reveal">{homeData.heroText}</p>
           <Link className="main-cta reveal reveal-button" to="/productos">Explorar Productos</Link>
         </div>
-        <button className="hero-arrow hero-arrow-prev" type="button" aria-label="Ver imagen anterior" onClick={showPreviousSlide}>
-          ‹
-        </button>
-        <button className="hero-arrow hero-arrow-next" type="button" aria-label="Ver imagen siguiente" onClick={showNextSlide}>
-          ›
-        </button>
+        <div className="hero-arrows" role="group" aria-label="Navegación del carrusel">
+          <button type="button" className="hero-arrow-btn" aria-label="Ver imagen anterior" onClick={showPreviousSlide}>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+              <path
+                d="M14 7.5l-5.5 5 5.5 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button type="button" className="hero-arrow-btn" aria-label="Ver imagen siguiente" onClick={showNextSlide}>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+              <path
+                d="M10 7.5l5.5 5-5.5 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
         <img className="hero-shape-divider" src={shapeDivisor} alt="" aria-hidden="true" />
       </section>
 
@@ -187,42 +225,66 @@ function HomePage() {
       </section>
       <WaveDivider tone="beige" />
 
-      <section className="products-zone">
+      <section className="products-zone products-zone-diferencia">
         <div className="container">
           <h2 className="reveal reveal-title">Lo que nos diferencia</h2>
           <div className="icon-grid">
             <article className="reveal">
+              <div className="icon">
+                <i className="fas fa-award" aria-hidden="true" />
+              </div>
               <h3>Tradición desde el 2000</h3>
               <p>Orgullosamente desde San Antonio de Rivas, con más de dos décadas de trabajo familiar.</p>
             </article>
             <article className="reveal">
+              <div className="icon">
+                <i className="fas fa-leaf" aria-hidden="true" />
+              </div>
               <h3>Calidad Natural</h3>
               <p>Leche entera, productos frescos y procesos libres de químicos innecesarios.</p>
             </article>
             <article className="reveal">
+              <div className="icon">
+                <i className="fas fa-seedling" aria-hidden="true" />
+              </div>
               <h3>Visión Ecológica</h3>
               <p>Regeneramos la finca con cercas vivas, pastoreo inteligente y nutrición natural del suelo.</p>
+            </article>
+            <article className="reveal">
+              <div className="icon">
+                <i className="fas fa-truck-fast" aria-hidden="true" />
+              </div>
+              <h3>Entrega y confianza</h3>
+              <p>Rutas semanales en Pérez Zeledón y atención directa para hogares y negocios que buscan frescura constante.</p>
             </article>
           </div>
         </div>
       </section>
 
       <section className="process-band">
-        <div className="container process-grid">
-          <div>
+        <div className="container">
+          <header className="process-head">
             <p className="eyebrow light">Proceso Diario</p>
             <h2 className="reveal reveal-title">{homeData.processTitle}</h2>
-            <p>{homeData.processText}</p>
-            <img className="reveal reveal-image" src={headTitles} alt="Proceso de extraccion" />
+            <p className="process-lead">{homeData.processText}</p>
+          </header>
+          <div className="process-split">
+            <figure className="process-photo">
+              <img
+                className="reveal reveal-image"
+                src={vacas5}
+                alt="Vacas en la finca: del campo a su puerta, productos frescos de San Antonio de Rivas"
+              />
+            </figure>
+            <ol className="process-timeline">
+              {homeData.processSteps.map((step, index) => (
+                <li className="reveal" key={step}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <p>{step}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-          <ol>
-            {homeData.processSteps.map((step, index) => (
-              <li className="reveal" key={step}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{step}</p>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
       <WaveDivider tone="green" />
@@ -266,7 +328,9 @@ function HomePage() {
               <p className="eyebrow light">Catálogo</p>
               <h3>{homeData.promoTitle}</h3>
             </div>
-            <button className="reveal-button" type="button">Ver más</button>
+            <Link to="/productos" className="reveal-button promo-strip-link">
+              Ver más
+            </Link>
           </div>
         </div>
       </section>
@@ -292,8 +356,8 @@ function NosotrosPage() {
           </p>
         </article>
         <div className="intro-gallery">
-          <img className="reveal reveal-image" src={vacas2} alt="Nuestra granja familiar" />
-          <img className="reveal reveal-image" src={potrero4} alt="Proceso artesanal de nuestros productos" />
+          <img className="reveal reveal-image" src={vacas7} alt="Ganado en la finca de San Antonio de Rivas" />
+          <img className="reveal reveal-image" src={vacas8} alt="Vacas en pastoreo, Quesos Pimpos" />
         </div>
       </section>
       <section className="container mission-vision-grid">
@@ -311,6 +375,22 @@ function NosotrosPage() {
             Evolucionar hacia una finca ecológica que una tradición, bienestar animal y productos lácteos naturales para las familias de Pérez Zeledón.
           </p>
         </article>
+      </section>
+      <WaveDivider tone="beige" />
+      <section className="nosotros-gallery-band" aria-label="Galería de la finca">
+        <div className="container">
+          <header className="nosotros-gallery-head">
+            <p className="eyebrow">Galería</p>
+            <h2 className="reveal reveal-title">Nuestra finca</h2>
+          </header>
+          <div className="nosotros-gallery-grid">
+            {NOSOTROS_GALLERY_FILES.map((file, index) => (
+              <figure key={file} className="nosotros-gallery-cell reveal">
+                <img src={nosotrosGalleryImageSrc(file)} alt={`Finca y producción Quesos Pimpos, imagen ${index + 1}`} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </div>
       </section>
       <section className="image-cta-section">
         <div className="image-cta-overlay" />
@@ -369,7 +449,7 @@ function ContactoPage() {
       <PageBanner title="Contacto" />
       <section className="container contact-page">
         <article className="contact-info reveal">
-          <h2 className="reveal-title">¡Haga su pedido hoy mismo!</h2>
+          <h2>¡Haga su pedido hoy mismo!</h2>
           <p>Atendemos hogares, pulperías y negocios con entregas semanales programadas en Pérez Zeledón.</p>
           <p><strong>Horario:</strong> Lunes a Domingo de 6:00 AM a 6:00 PM</p>
           <p><strong>Ubicación:</strong> San Antonio de Rivas, Pérez Zeledón</p>
@@ -378,7 +458,7 @@ function ContactoPage() {
         </article>
 
         <form className="contact-form reveal">
-          <h2 className="reveal-title">Escríbanos</h2>
+          <h2>Escríbanos</h2>
           <label htmlFor="name">Nombre</label>
           <input id="name" name="name" type="text" placeholder="Tu nombre" />
 
@@ -405,6 +485,16 @@ function ContactoPage() {
       </section>
     </>
   );
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }
 
 function SiteLayout() {
@@ -476,6 +566,7 @@ function SiteLayout() {
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <SiteLayout />
     </BrowserRouter>
   );
