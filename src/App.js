@@ -14,6 +14,12 @@ import shapeDivisor from './assets/images/shape-divisor.webp';
 import waveBage from './assets/images/wave-bage.svg';
 import waveVerde from './assets/images/wave-verde.svg';
 import waveWhite from './assets/images/wave-white.svg';
+import galeriaN1 from './assets/images/galeria-nuevas1.webp';
+import galeriaN2 from './assets/images/galeria-nuevas2.webp';
+import galeriaN3 from './assets/images/galeria-nuevas3.webp';
+import galeriaN4 from './assets/images/galeria-nuevas4.webp';
+import galeriaN5 from './assets/images/galeria-nuevas5.webp';
+import galeriaN6 from './assets/images/galeria-nuevas6.webp';
 
 const homeData = {
   kicker: 'Quesos Pimpos',
@@ -384,11 +390,23 @@ function NosotrosPage() {
             <h2 className="reveal reveal-title">Nuestra finca</h2>
           </header>
           <div className="nosotros-gallery-grid">
-            {NOSOTROS_GALLERY_FILES.map((file, index) => (
-              <figure key={file} className="nosotros-gallery-cell reveal">
-                <img src={nosotrosGalleryImageSrc(file)} alt={`Finca y producción Quesos Pimpos, imagen ${index + 1}`} loading="lazy" />
-              </figure>
-            ))}
+            {(() => {
+              const gallerySources = [
+                ...NOSOTROS_GALLERY_FILES.map((f) => nosotrosGalleryImageSrc(f)),
+                galeriaN1,
+                galeriaN2,
+                galeriaN3,
+                galeriaN4,
+                galeriaN5,
+                galeriaN6
+              ];
+
+              return gallerySources.map((src, index) => (
+                <figure key={String(index)} className="nosotros-gallery-cell reveal">
+                  <img src={src} alt={`Finca y producción Quesos Pimpos, imagen ${index + 1}`} loading="lazy" />
+                </figure>
+              ));
+            })()}
           </div>
         </div>
       </section>
