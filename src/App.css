@@ -947,7 +947,7 @@ nav {
   display: flex;
   align-items: center;
   background-image: linear-gradient(100deg, rgba(13, 79, 45, 0.75), rgba(13, 79, 45, 0.45)),
-    url('./assets/images/head-titles.webp');
+    url('./assets/images/bg-head-title.webp');
   background-position: center;
   background-size: cover;
   color: #f3fff4;
@@ -972,7 +972,7 @@ nav {
 /* Estilo para usar imagen localizada en src/assets/images/head-titles.webp
    Aplicar la clase `head-breadcrumbs` al contenedor de las migas (breadcrumbs). */
 .head-breadcrumbs {
-  background-image: url('./assets/images/head-titles.webp');
+  background-image: url('./assets/images/bg-head-title.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -984,7 +984,7 @@ nav {
 /* Regla específica para reemplazar el fondo de .inner-hero cuando se añade la clase head-breadcrumbs */
 .inner-hero.head-breadcrumbs {
   background-image: linear-gradient(100deg, rgba(13, 79, 45, 0.75), rgba(13, 79, 45, 0.45)),
-    url('./assets/images/head-titles.webp');
+    url('./assets/images/bg-head-title.webp');
   background-position: center;
   background-size: cover;
   color: #f3fff4;
@@ -1018,9 +1018,25 @@ nav {
   min-height: 360px;
   display: flex;
   align-items: center;
-  background-image: url('./assets/images/head-titles.webp');
+  background-image: url('./assets/images/bg-call-action.webp');
   background-size: cover;
   background-position: center;
+}
+
+/* Divisor de olas blancas bajo la sección CTA */
+.image-cta-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 140px;
+  background-image: url('./assets/images/shape-divisor.webp');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .image-cta-overlay {

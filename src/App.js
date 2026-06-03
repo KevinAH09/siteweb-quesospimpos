@@ -9,6 +9,7 @@ import queso3 from './assets/images/productos/queso-3.webp';
 import leche4 from './assets/images/productos/leche-4.webp';
 import slide1 from './assets/images/slide-1.webp';
 import slide3 from './assets/images/slide-3.webp';
+import slideHome1 from './assets/images/slide-home-1.webp';
 import vacas5 from './assets/images/vacas-5.webp';
 import shapeDivisor from './assets/images/shape-divisor.webp';
 import waveBage from './assets/images/wave-bage.svg';
@@ -20,6 +21,7 @@ import galeriaN3 from './assets/images/galeria-nuevas3.webp';
 import galeriaN4 from './assets/images/galeria-nuevas4.webp';
 import galeriaN5 from './assets/images/galeria-nuevas5.webp';
 import galeriaN6 from './assets/images/galeria-nuevas6.webp';
+import natilla from './assets/images/productos/natilla.webp';
 
 const homeData = {
   kicker: 'Quesos Pimpos',
@@ -72,6 +74,7 @@ const homeData = {
 };
 
 const heroSlides = [
+  { image: slideHome1, label: 'Lanzamiento: Natilla y productos frescos' },
   { image: slide1, label: 'Finca de Quesos Pimpos' },
   { image: slide3, label: 'Productos frescos de Quesos Pimpos' }
 ];
@@ -428,7 +431,7 @@ function ProductosPage() {
   const productGallery = [
     { title: 'Leche Entera Natural', image: leche4, description: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' },
     { title: 'Queso Tierno Artesanal', image: queso3, description: 'Elaborado diariamente con leche entera de calidad y prensado en frío, mediante un proceso totalmente natural.', formats: 'Venta: por kilogramo' },
-    { title: 'Natilla de la Casa', image: queso3, description: 'Producida bajo una receta única familiar. Es 100% natural y libre de químicos.', formats: 'Presentaciones: 250g y 500g' },
+    { title: 'Natilla de la Casa', image: natilla, description: 'Producida bajo una receta única familiar. Es 100% natural y libre de químicos.', formats: 'Presentaciones: 250g y 500g' },
     { title: 'Leche Agria Tradicional', image: leche4, description: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' }
   ];
 
