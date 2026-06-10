@@ -3,6 +3,7 @@ import App from './App';
 
 test('renders site brand', () => {
   render(<App />);
-  const brand = screen.getByText('Quesos Pimpos', { selector: '.brand' });
-  expect(brand).toBeInTheDocument();
+  const logos = screen.getAllByAltText('Quesos Pimpos');
+  expect(logos.length).toBeGreaterThan(0);
+  expect(logos[0]).toHaveClass('brand-logo');
 });

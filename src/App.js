@@ -22,6 +22,8 @@ import galeriaN4 from './assets/images/galeria-nuevas4.webp';
 import galeriaN5 from './assets/images/galeria-nuevas5.webp';
 import galeriaN6 from './assets/images/galeria-nuevas6.webp';
 import natilla from './assets/images/productos/natilla.webp';
+import logoColor from './assets/images/logo-color.webp';
+import logoFooter from './assets/images/logo-transparente-numero-blanco.webp';
 
 const homeData = {
   kicker: 'Quesos Pimpos',
@@ -525,7 +527,9 @@ function SiteLayout() {
   return (
     <div className="site-shell">
       <header className="topbar">
-        <Link to="/" className="brand">Quesos Pimpos</Link>
+        <Link to="/" className="brand">
+          <img src={logoColor} alt="Quesos Pimpos" className="brand-logo" />
+        </Link>
         <button className={`hamburger ${menuOpen ? 'is-open' : ''}`} aria-label="Abrir menu" onClick={() => setMenuOpen((s) => !s)}>
           <span />
           <span />
@@ -560,8 +564,7 @@ function SiteLayout() {
       <footer className="site-footer">
         <div className="footer-content container">
           <div>
-            <h3>Quesos Pimpos</h3>
-            <p>Orgullosamente desde el 2000.</p>
+            <img src={logoFooter} alt="Quesos Pimpos" className="footer-logo" />
             <p>Ser la marca regional referente en confianza y sabor, destacando por nuestra constancia operativa y trato humano.</p>
           </div>
           <div>
@@ -578,7 +581,7 @@ function SiteLayout() {
             <p>San Antonio de Rivas, Pérez Zeledón</p>
           </div>
         </div>
-        <p className="copyright">© {new Date().getFullYear()} Quesos Pimpos. Todos los derechos reservados.</p>
+        <p className="copyright">© {new Date().getFullYear()} <img src={logoFooter} alt="Quesos Pimpos" className="copyright-logo" />. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

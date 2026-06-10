@@ -582,6 +582,24 @@ nav {
   transform: translateY(36px);
 }
 
+/* Logo styles for header and footer */
+.brand-logo {
+  height: 44px;
+  display: block;
+  object-fit: contain;
+}
+.footer-logo {
+  height: 100px;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+.copyright-logo {
+  height: 16px;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
 .intro-gallery img:nth-child(2) {
   border-radius: 42% 58% 53% 47% / 56% 42% 58% 44%;
 }
