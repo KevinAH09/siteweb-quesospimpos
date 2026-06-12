@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/siteweb-quesospimpos/static/css/main.cc2fcaf5.css",
+    "main.js": "/siteweb-quesospimpos/static/js/main.ce212a12.js",
+    "static/js/453.c8456b91.chunk.js": "/siteweb-quesospimpos/static/js/453.c8456b91.chunk.js",
+    "static/media/slide-home-1.webp": "/siteweb-quesospimpos/static/media/slide-home-1.c5a69f724c6105122c23.webp",
+    "static/media/slide-1.webp": "/siteweb-quesospimpos/static/media/slide-1.8a9e55633d266b0af2e0.webp",
+    "static/media/vacas-2.webp": "/siteweb-quesospimpos/static/media/vacas-2.d470c67c7bdd715497c1.webp",
+    "static/media/bg-call-action.webp": "/siteweb-quesospimpos/static/media/bg-call-action.83d90b1286e480397a91.webp",
+    "static/media/bg-head-title.webp": "/siteweb-quesospimpos/static/media/bg-head-title.83d90b1286e480397a91.webp",
+    "static/media/slide-3.webp": "/siteweb-quesospimpos/static/media/slide-3.85b9d82f5a52b058c0c7.webp",
+    "static/media/vacas-5.webp": "/siteweb-quesospimpos/static/media/vacas-5.e3c4b3f621666d0c3925.webp",
+    "static/media/potrero-4.webp": "/siteweb-quesospimpos/static/media/potrero-4.42d6a60885246f17ba89.webp",
+    "static/media/head-titles.webp": "/siteweb-quesospimpos/static/media/head-titles.350303b41752477b0984.webp",
+    "static/media/vacas-7.webp": "/siteweb-quesospimpos/static/media/vacas-7.4b98863030558ea04578.webp",
+    "static/media/vacas-8.webp": "/siteweb-quesospimpos/static/media/vacas-8.9aad69d310a390e81e86.webp",
+    "static/media/logo-transparente-numero-blanco.webp": "/siteweb-quesospimpos/static/media/logo-transparente-numero-blanco.fe8e64da58dbfc80d655.webp",
+    "static/media/leche-4.webp": "/siteweb-quesospimpos/static/media/leche-4.4ad945fa8397a3632c29.webp",
+    "static/media/galeria-nuevas5.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas5.91522a77d86ce838935e.webp",
+    "static/media/galeria-nuevas1.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas1.04b5d89f2434c0a186a9.webp",
+    "static/media/galeria-nuevas4.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas4.c2d34513a5e6909d984d.webp",
+    "static/media/queso-3.webp": "/siteweb-quesospimpos/static/media/queso-3.7c72217ace0ce44dd702.webp",
+    "static/media/natilla.webp": "/siteweb-quesospimpos/static/media/natilla.41bf2f5fed4758424120.webp",
+    "static/media/galeria-nuevas6.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas6.b25b910651f890b87f62.webp",
+    "static/media/logo-color.webp": "/siteweb-quesospimpos/static/media/logo-color.3c1fd6922ed5bb4eae63.webp",
+    "static/media/galeria-nuevas3.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas3.a39e0a81d9a19f18b925.webp",
+    "static/media/galeria-nuevas2.webp": "/siteweb-quesospimpos/static/media/galeria-nuevas2.fa763c41762db2053fc1.webp",
+    "static/media/shape-divisor.webp": "/siteweb-quesospimpos/static/media/shape-divisor.7233f4da7fe9f7d0a02f.webp",
+    "static/media/wave-bage.svg": "/siteweb-quesospimpos/static/media/wave-bage.94f7135d3fdd55b7068c0d592c99935b.svg",
+    "static/media/wave-white.svg": "/siteweb-quesospimpos/static/media/wave-white.f08be20d9d26078730025030547a2ea6.svg",
+    "static/media/wave-verde.svg": "/siteweb-quesospimpos/static/media/wave-verde.feff4e08019c190bcada7e7105fe9602.svg",
+    "index.html": "/siteweb-quesospimpos/index.html",
+    "main.cc2fcaf5.css.map": "/siteweb-quesospimpos/static/css/main.cc2fcaf5.css.map",
+    "main.ce212a12.js.map": "/siteweb-quesospimpos/static/js/main.ce212a12.js.map",
+    "453.c8456b91.chunk.js.map": "/siteweb-quesospimpos/static/js/453.c8456b91.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc2fcaf5.css",
+    "static/js/main.ce212a12.js"
+  ]
+}
