@@ -26,13 +26,13 @@ import logoColor from './assets/images/logo-color.webp';
 import logoFooter from './assets/images/logo-transparente-numero-blanco.webp';
 
 const homeData = {
-  kicker: 'Quesos Pimpos',
+  kicker: 'Quesos Jersey',
   heroTitle: 'El sabor auténtico del campo en su mesa.',
   heroText:
     'Llevamos más de 20 años transformando la pureza de San Antonio de Rivas en productos lácteos frescos y naturales. De nuestra finca a su familia, con el compromiso de una producción honesta y sostenible.',
   introTitle: 'Un legado familiar que nace de la tierra.',
   introText:
-    'En el año 2000, don José Acuña Hernández inició este sueño con apenas 6 vacas y el trabajo dedicado del ordeño a mano. Hoy, con más de 20 vacas en producción, Quesos Pimpos es un proyecto integral que busca unir a la familia y ser un ejemplo de superación en San Antonio de Rivas.',
+    'En el año 2000, don José Acuña Hernández inició este sueño con apenas 6 vacas y el trabajo dedicado del ordeño a mano. Hoy, con más de 20 vacas en producción, Quesos Jersey es un proyecto integral que busca unir a la familia y ser un ejemplo de superación en San Antonio de Rivas.',
   introPoints: [
     'Leche entera y natural',
     'Sanidad animal y comercio justo',
@@ -77,8 +77,8 @@ const homeData = {
 
 const heroSlides = [
   { image: slideHome1, label: 'Lanzamiento: Natilla y productos frescos' },
-  { image: slide1, label: 'Finca de Quesos Pimpos' },
-  { image: slide3, label: 'Productos frescos de Quesos Pimpos' }
+  { image: slide1, label: 'Finca de Quesos Jersey' },
+  { image: slide3, label: 'Productos frescos de Quesos Jersey' }
 ];
 
 const NOSOTROS_GALLERY_FILES = [
@@ -172,7 +172,7 @@ function HomePage() {
 
   return (
     <>
-      <section className="hero-slider" aria-label="Quesos Pimpos">
+      <section className="hero-slider" aria-label="Quesos Jersey">
         <div className="hero-slides" aria-hidden="true">
           {heroSlides.map((slide, index) => (
             <div
@@ -360,7 +360,7 @@ function NosotrosPage() {
           <p className="eyebrow">Nuestra Historia</p>
           <h2 className="reveal reveal-title">Un legado familiar que nace de la tierra.</h2>
           <p>
-            En el año 2000, don José Acuña Hernández inició este sueño con apenas 6 vacas y el trabajo dedicado del ordeño a mano. Hoy, con más de 20 vacas en producción, Quesos Pimpos es un proyecto integral que busca unir a la familia y ser un ejemplo de superación en San Antonio de Rivas.
+            En el año 2000, don José Acuña Hernández inició este sueño con apenas 6 vacas y el trabajo dedicado del ordeño a mano. Hoy, con más de 20 vacas en producción, Quesos Jersey es un proyecto integral que busca unir a la familia y ser un ejemplo de superación en San Antonio de Rivas.
           </p>
           <p>
             No solo producimos lácteos; cuidamos la sanidad animal y el comercio justo. Creemos que un animal bien alimentado es más sano y fértil, lo que nos permite ofrecer productos superiores sin depender de químicos innecesarios.
@@ -368,7 +368,7 @@ function NosotrosPage() {
         </article>
         <div className="intro-gallery">
           <img className="reveal reveal-image" src={vacas7} alt="Ganado en la finca de San Antonio de Rivas" />
-          <img className="reveal reveal-image" src={vacas8} alt="Vacas en pastoreo, Quesos Pimpos" />
+            <img className="reveal reveal-image" src={vacas8} alt="Vacas en pastoreo, Quesos Jersey" />
         </div>
       </section>
       <section className="container mission-vision-grid">
@@ -408,7 +408,7 @@ function NosotrosPage() {
 
               return gallerySources.map((src, index) => (
                 <figure key={String(index)} className="nosotros-gallery-cell reveal">
-                  <img src={src} alt={`Finca y producción Quesos Pimpos, imagen ${index + 1}`} loading="lazy" />
+                  <img src={src} alt={`Finca y producción Quesos Jersey, imagen ${index + 1}`} loading="lazy" />
                 </figure>
               ));
             })()}
@@ -499,7 +499,7 @@ function ContactoPage() {
       <section className="map-zone">
         <div className="container map-wrap">
           <iframe
-            title="Ubicacion de Quesos Pimpos"
+            title="Ubicacion de Quesos Jersey"
             src="https://www.google.com/maps?q=San+Antonio+de+Rivas+Perez+Zeledon+Costa+Rica&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -528,7 +528,7 @@ function SiteLayout() {
     <div className="site-shell">
       <header className="topbar">
         <Link to="/" className="brand">
-          <img src={logoColor} alt="Quesos Pimpos" className="brand-logo" />
+          <img src={logoColor} alt="Quesos Jersey" className="brand-logo" />
         </Link>
         <button className={`hamburger ${menuOpen ? 'is-open' : ''}`} aria-label="Abrir menu" onClick={() => setMenuOpen((s) => !s)}>
           <span />
@@ -564,7 +564,7 @@ function SiteLayout() {
       <footer className="site-footer">
         <div className="footer-content container">
           <div>
-            <img src={logoFooter} alt="Quesos Pimpos" className="footer-logo" />
+            <img src={logoFooter} alt="Quesos Jersey" className="footer-logo" />
             <p>Ser la marca regional referente en confianza y sabor, destacando por nuestra constancia operativa y trato humano.</p>
           </div>
           <div>
@@ -581,7 +581,7 @@ function SiteLayout() {
             <p>San Antonio de Rivas, Pérez Zeledón</p>
           </div>
         </div>
-        <p className="copyright">© {new Date().getFullYear()} <img src={logoFooter} alt="Quesos Pimpos" className="copyright-logo" />. Todos los derechos reservados.</p>
+        <p className="copyright">© {new Date().getFullYear()} Quesos Jersey. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

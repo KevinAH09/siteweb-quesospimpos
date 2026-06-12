@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders site brand', () => {
   render(<App />);
-  const logos = screen.getAllByAltText('Quesos Pimpos');
+  const logos = screen.getAllByAltText('Quesos Jersey');
   expect(logos.length).toBeGreaterThan(0);
   expect(logos[0]).toHaveClass('brand-logo');
 });
