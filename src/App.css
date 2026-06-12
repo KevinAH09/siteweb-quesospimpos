@@ -1039,7 +1039,7 @@ nav {
   background-image: url('./assets/images/bg-call-action.webp');
   background-size: cover;
   background-position: center;
-  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 /* Divisor de olas blancas bajo la sección CTA */
@@ -1069,6 +1069,7 @@ nav {
   text-align: center;
   color: #f3fff4;
   max-width: 760px;
+  z-index: 4;
 }
 
 .image-cta-content h3 {
