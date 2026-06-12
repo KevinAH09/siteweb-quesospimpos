@@ -569,10 +569,10 @@ function SiteLayout() {
           </div>
           <div>
             <h4>Enlaces</h4>
-            <p>Inicio</p>
-            <p>Nosotros</p>
-            <p>Productos</p>
-            <p>Contacto</p>
+            <p><Link to="/">Inicio</Link></p>
+            <p><Link to="/nosotros">Nosotros</Link></p>
+            <p><Link to="/productos">Productos</Link></p>
+            <p><Link to="/contacto">Contacto</Link></p>
           </div>
           <div>
             <h4>Contacto</h4>
