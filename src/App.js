@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './App.css';
+
 import vacas2 from './assets/images/nosotros/vacas-2.webp';
 import potrero4 from './assets/images/nosotros/potrero-4.webp';
 import vacas7 from './assets/images/vacas-7.webp';
@@ -24,6 +26,9 @@ import galeriaN6 from './assets/images/galeria-nuevas6.webp';
 import natilla from './assets/images/productos/natilla.webp';
 import logoColor from './assets/images/logo-color.webp';
 import logoFooter from './assets/images/logo-transparente-numero-blanco.webp';
+
+const SITE_URL = 'https://siteweb-quesospimpos.pages.dev';
+const SITE_NAME = 'Quesos Jersey';
 
 const homeData = {
   kicker: 'Quesos Jersey',
@@ -170,8 +175,67 @@ function HomePage() {
     setActiveSlide((current) => (current + 1) % heroSlides.length);
   };
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: SITE_NAME,
+    description: 'Productora artesanal de quesos, leche entera, natilla y leche agria desde San Antonio de Rivas, Pérez Zeledón, Costa Rica. Más de 20 años de tradición familiar.',
+    url: SITE_URL,
+    telephone: '+50657151979',
+    email: 'joseacuna794@gmail.com',
+    image: `${SITE_URL}/logo192.png`,
+    priceRange: '₡',
+    foundingDate: '2000',
+    founder: { '@type': 'Person', name: 'José Acuña Hernández' },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'San Antonio de Rivas',
+      addressLocality: 'Pérez Zeledón',
+      addressRegion: 'San José',
+      addressCountry: 'CR'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 9.3667,
+      longitude: -83.7833
+    },
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+      opens: '06:00',
+      closes: '18:00'
+    }],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Productos lácteos artesanales',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Leche Entera Natural' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Queso Tierno Artesanal' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Natilla de la Casa' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Leche Agria Tradicional' } }
+      ]
+    }
+  };
+
   return (
     <>
+      <Helmet>
+        <title>Quesos Jersey | Lácteos Artesanales en Pérez Zeledón, Costa Rica</title>
+        <meta name="description" content="Quesos, leche entera, natilla y leche agria artesanal desde San Antonio de Rivas, Pérez Zeledón. Más de 20 años de tradición familiar. Entregas semanales a hogares y negocios." />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Quesos Jersey | Lácteos Artesanales en Pérez Zeledón" />
+        <meta property="og:description" content="Productos lácteos 100% naturales desde San Antonio de Rivas, Pérez Zeledón. Queso tierno, leche entera, natilla y leche agria con entrega semanal." />
+        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Quesos Jersey | Lácteos Artesanales en Pérez Zeledón" />
+        <meta name="twitter:description" content="Productos lácteos 100% naturales desde San Antonio de Rivas, Pérez Zeledón." />
+        <meta name="twitter:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="keywords" content="quesos Pérez Zeledón, lácteos artesanales Costa Rica, queso tierno San Antonio de Rivas, leche entera natural, natilla artesanal, leche agria, Quesos Jersey" />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <section className="hero-slider" aria-label="Quesos Jersey">
         <div className="hero-slides" aria-hidden="true">
           {heroSlides.map((slide, index) => (
@@ -352,8 +416,51 @@ function HomePage() {
 }
 
 function NosotrosPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    url: `${SITE_URL}/nosotros`,
+    name: `Nosotros | ${SITE_NAME}`,
+    description: 'Historia, misión y visión de Quesos Jersey, finca familiar fundada en el año 2000 en San Antonio de Rivas, Pérez Zeledón, Costa Rica.',
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      foundingDate: '2000',
+      founder: { '@type': 'Person', name: 'José Acuña Hernández' },
+      description: 'Productora artesanal de lácteos naturales en San Antonio de Rivas, Pérez Zeledón, Costa Rica.',
+      url: SITE_URL,
+      telephone: '+50657151979',
+      email: 'joseacuna794@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'San Antonio de Rivas',
+        addressLocality: 'Pérez Zeledón',
+        addressRegion: 'San José',
+        addressCountry: 'CR'
+      },
+      mission: 'Ser la marca regional referente en confianza y sabor, destacando por nuestra constancia operativa y trato humano.',
+      slogan: 'El sabor auténtico del campo en su mesa.'
+    }
+  };
+
   return (
     <>
+      <Helmet>
+        <title>Nosotros | Quesos Jersey – Tradición Familiar desde el 2000</title>
+        <meta name="description" content="Conoce la historia de Quesos Jersey, fundada por don José Acuña Hernández en San Antonio de Rivas, Pérez Zeledón. Más de 20 años produciendo lácteos naturales y artesanales." />
+        <link rel="canonical" href={`${SITE_URL}/nosotros`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/nosotros`} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Nosotros | Quesos Jersey – Tradición Familiar desde el 2000" />
+        <meta property="og:description" content="Historia y valores de Quesos Jersey: finca familiar con más de 20 años produciendo lácteos artesanales en Pérez Zeledón, Costa Rica." />
+        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nosotros | Quesos Jersey – Tradición Familiar desde el 2000" />
+        <meta name="twitter:description" content="Historia y valores de Quesos Jersey en Pérez Zeledón, Costa Rica." />
+        <meta name="keywords" content="historia Quesos Jersey, finca láctea Pérez Zeledón, José Acuña Hernández, San Antonio de Rivas, lácteos naturales Costa Rica, quesos artesanales" />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <PageBanner title="Nosotros" />
       <section className="container intro-grid">
         <article className="intro-copy">
@@ -430,6 +537,60 @@ function NosotrosPage() {
 }
 
 function ProductosPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Productos lácteos artesanales – Quesos Jersey',
+    url: `${SITE_URL}/productos`,
+    description: 'Catálogo de productos lácteos artesanales producidos en San Antonio de Rivas, Pérez Zeledón, Costa Rica.',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Product',
+          name: 'Leche Entera Natural',
+          description: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional. Disponible en 1L, 1.5L, 2L y 3L.',
+          brand: { '@type': 'Brand', name: SITE_NAME },
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', priceCurrency: 'CRC', seller: { '@type': 'Organization', name: SITE_NAME } }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'Product',
+          name: 'Queso Tierno Artesanal',
+          description: 'Elaborado diariamente con leche entera de calidad y prensado en frío, mediante un proceso totalmente natural. Venta por kilogramo.',
+          brand: { '@type': 'Brand', name: SITE_NAME },
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', priceCurrency: 'CRC', unitCode: 'KGM', seller: { '@type': 'Organization', name: SITE_NAME } }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'Product',
+          name: 'Natilla de la Casa',
+          description: 'Producida bajo una receta única familiar. Es 100% natural y libre de químicos. Disponible en 250g y 500g.',
+          brand: { '@type': 'Brand', name: SITE_NAME },
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', priceCurrency: 'CRC', seller: { '@type': 'Organization', name: SITE_NAME } }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        item: {
+          '@type': 'Product',
+          name: 'Leche Agria Tradicional',
+          description: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo. Disponible en 1L, 1.5L, 2L y 3L.',
+          brand: { '@type': 'Brand', name: SITE_NAME },
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', priceCurrency: 'CRC', seller: { '@type': 'Organization', name: SITE_NAME } }
+        }
+      }
+    ]
+  };
+
   const productGallery = [
     { title: 'Leche Entera Natural', image: leche4, description: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' },
     { title: 'Queso Tierno Artesanal', image: queso3, description: 'Elaborado diariamente con leche entera de calidad y prensado en frío, mediante un proceso totalmente natural.', formats: 'Venta: por kilogramo' },
@@ -439,6 +600,22 @@ function ProductosPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Productos | Quesos Jersey – Leche, Queso, Natilla y Leche Agria</title>
+        <meta name="description" content="Catálogo de Quesos Jersey: leche entera natural, queso tierno artesanal, natilla de la casa y leche agria tradicional. 100% naturales desde Pérez Zeledón, Costa Rica." />
+        <link rel="canonical" href={`${SITE_URL}/productos`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/productos`} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Productos | Quesos Jersey – Lácteos 100% Naturales" />
+        <meta property="og:description" content="Leche entera, queso tierno artesanal, natilla y leche agria. Producidos diariamente en San Antonio de Rivas, Pérez Zeledón." />
+        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Productos | Quesos Jersey – Lácteos 100% Naturales" />
+        <meta name="twitter:description" content="Leche entera, queso artesanal, natilla y leche agria desde Pérez Zeledón, Costa Rica." />
+        <meta name="keywords" content="queso tierno artesanal Pérez Zeledón, leche entera natural Costa Rica, natilla artesanal, leche agria tradicional, lácteos San Antonio de Rivas, comprar queso Pérez Zeledón" />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <PageBanner title="Productos" />
       <section className="container product-page">
         <div className="gallery-grid">
@@ -467,8 +644,66 @@ function ProductosPage() {
 }
 
 function ContactoPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${SITE_URL}/contacto`,
+    name: `Contacto | ${SITE_NAME}`,
+    description: 'Contáctenos para pedidos y entregas semanales en Pérez Zeledón. Atendemos hogares, pulperías y negocios.',
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: SITE_NAME,
+      telephone: '+50657151979',
+      email: 'joseacuna794@gmail.com',
+      openingHoursSpecification: [{
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        opens: '06:00',
+        closes: '18:00'
+      }],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'San Antonio de Rivas',
+        addressLocality: 'Pérez Zeledón',
+        addressRegion: 'San José',
+        addressCountry: 'CR'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 9.3667,
+        longitude: -83.7833
+      },
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: 'Pérez Zeledón'
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+50657151979',
+        contactType: 'sales',
+        availableLanguage: 'Spanish'
+      }
+    }
+  };
+
   return (
     <>
+      <Helmet>
+        <title>Contacto | Quesos Jersey – Pedidos en Pérez Zeledón</title>
+        <meta name="description" content="Haga su pedido de lácteos artesanales en Pérez Zeledón. WhatsApp: +506 5715-1979. Entregas semanales a hogares y negocios. Lunes a Domingo 6:00 AM – 6:00 PM." />
+        <link rel="canonical" href={`${SITE_URL}/contacto`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/contacto`} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Contacto | Quesos Jersey – Pedidos en Pérez Zeledón" />
+        <meta property="og:description" content="Solicite entrega semanal de quesos, leche entera, natilla y leche agria en Pérez Zeledón. WhatsApp disponible." />
+        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contacto | Quesos Jersey – Pedidos en Pérez Zeledón" />
+        <meta name="twitter:description" content="Pedidos de lácteos artesanales en Pérez Zeledón. WhatsApp: +506 5715-1979." />
+        <meta name="keywords" content="pedidos lácteos Pérez Zeledón, entrega quesos Costa Rica, comprar leche entera San Antonio de Rivas, contacto Quesos Jersey, WhatsApp lácteos Pérez Zeledón" />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <PageBanner title="Contacto" />
       <section className="container contact-page">
         <article className="contact-info reveal">
@@ -589,10 +824,12 @@ function SiteLayout() {
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ScrollToTop />
-      <SiteLayout />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
+        <SiteLayout />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
