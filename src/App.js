@@ -220,20 +220,20 @@ function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Quesos Jersey | Lácteos Artesanales en Pérez Zeledón, Costa Rica</title>
-        <meta name="description" content="Quesos, leche entera, natilla y leche agria artesanal desde San Antonio de Rivas, Pérez Zeledón. Más de 20 años de tradición familiar. Entregas semanales a hogares y negocios." />
+        <title>Lechería y Quesos Artesanales en Pérez Zeledón | Quesos Jersey</title>
+        <meta name="description" content="Descubra el verdadero sabor del campo. Ofrecemos queso artesanal, leche fresca y productos lácteos de alta calidad en Pérez Zeledón. ¡Visítenos o haga su pedido!" />
         <link rel="canonical" href={SITE_URL} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content="Quesos Jersey | Lácteos Artesanales en Pérez Zeledón" />
-        <meta property="og:description" content="Productos lácteos 100% naturales desde San Antonio de Rivas, Pérez Zeledón. Queso tierno, leche entera, natilla y leche agria con entrega semanal." />
+        <meta property="og:title" content="Lechería y Quesos Artesanales en Pérez Zeledón | Quesos Jersey" />
+        <meta property="og:description" content="Descubra el verdadero sabor del campo. Queso artesanal, leche fresca y lácteos de alta calidad desde San Antonio de Rivas, Pérez Zeledón." />
         <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Quesos Jersey | Lácteos Artesanales en Pérez Zeledón" />
-        <meta name="twitter:description" content="Productos lácteos 100% naturales desde San Antonio de Rivas, Pérez Zeledón." />
+        <meta name="twitter:title" content="Lechería y Quesos Artesanales en Pérez Zeledón | Quesos Jersey" />
+        <meta name="twitter:description" content="Queso artesanal, leche fresca y lácteos naturales en Pérez Zeledón. Más de 20 años de tradición familiar." />
         <meta name="twitter:image" content={`${SITE_URL}/logo512.png`} />
-        <meta name="keywords" content="quesos Pérez Zeledón, lácteos artesanales Costa Rica, queso tierno San Antonio de Rivas, leche entera natural, natilla artesanal, leche agria, Quesos Jersey" />
+        <meta name="keywords" content="lechería Pérez Zeledón, quesos artesanales Pérez Zeledón, queso tierno San Antonio de Rivas, leche fresca Costa Rica, natilla artesanal, lácteos naturales, Quesos Jersey" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       <section className="hero-slider" aria-label="Quesos Jersey">
@@ -446,17 +446,17 @@ function NosotrosPage() {
   return (
     <>
       <Helmet>
-        <title>Nosotros | Quesos Jersey – Tradición Familiar desde el 2000</title>
-        <meta name="description" content="Conoce la historia de Quesos Jersey, fundada por don José Acuña Hernández en San Antonio de Rivas, Pérez Zeledón. Más de 20 años produciendo lácteos naturales y artesanales." />
+        <title>Historia y Tradición de Nuestra Lechería | Quesos Jersey</title>
+        <meta name="description" content="Producimos lácteos con un compromiso ecológico en Pérez Zeledón. Conozca cómo nuestro ganado y procesos naturales aseguran el mejor queso de la región." />
         <link rel="canonical" href={`${SITE_URL}/nosotros`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/nosotros`} />
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content="Nosotros | Quesos Jersey – Tradición Familiar desde el 2000" />
-        <meta property="og:description" content="Historia y valores de Quesos Jersey: finca familiar con más de 20 años produciendo lácteos artesanales en Pérez Zeledón, Costa Rica." />
+        <meta property="og:title" content="Historia y Tradición de Nuestra Lechería | Quesos Jersey" />
+        <meta property="og:description" content="Finca familiar con más de 20 años de tradición. Procesos ecológicos, pastoreo rotativo y bienestar animal en San Antonio de Rivas, Pérez Zeledón." />
         <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Nosotros | Quesos Jersey – Tradición Familiar desde el 2000" />
+        <meta name="twitter:title" content="Historia y Tradición de Nuestra Lechería | Quesos Jersey" />
         <meta name="twitter:description" content="Historia y valores de Quesos Jersey en Pérez Zeledón, Costa Rica." />
         <meta name="keywords" content="historia Quesos Jersey, finca láctea Pérez Zeledón, José Acuña Hernández, San Antonio de Rivas, lácteos naturales Costa Rica, quesos artesanales" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
@@ -601,8 +601,8 @@ function ProductosPage() {
   return (
     <>
       <Helmet>
-        <title>Productos | Quesos Jersey – Leche, Queso, Natilla y Leche Agria</title>
-        <meta name="description" content="Catálogo de Quesos Jersey: leche entera natural, queso tierno artesanal, natilla de la casa y leche agria tradicional. 100% naturales desde Pérez Zeledón, Costa Rica." />
+        <title>Nuestros Productos Lácteos y Quesos | Pérez Zeledón – Quesos Jersey</title>
+        <meta name="description" content="Conozca nuestra variedad de quesos artesanales y leche fresca de lechería. Productos naturales directo de la finca a su mesa en Pérez Zeledón, Costa Rica." />
         <link rel="canonical" href={`${SITE_URL}/productos`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/productos`} />
@@ -689,8 +689,8 @@ function ContactoPage() {
   return (
     <>
       <Helmet>
-        <title>Contacto | Quesos Jersey – Pedidos en Pérez Zeledón</title>
-        <meta name="description" content="Haga su pedido de lácteos artesanales en Pérez Zeledón. WhatsApp: +506 5715-1979. Entregas semanales a hogares y negocios. Lunes a Domingo 6:00 AM – 6:00 PM." />
+        <title>Contacto y Pedidos de Queso y Leche en Pérez Zeledón | Quesos Jersey</title>
+        <meta name="description" content="¿Desea comprar queso artesanal o leche fresca? Contáctenos aquí. Ubicación, horarios y pedidos por WhatsApp para entregas en Pérez Zeledón." />
         <link rel="canonical" href={`${SITE_URL}/contacto`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/contacto`} />
@@ -811,13 +811,28 @@ function SiteLayout() {
           </div>
           <div>
             <h4>Contacto</h4>
-            <p>Teléfono y WhatsApp: +506 57151979</p>
-            <p>Correo: joseacuna794@gmail.com</p>
-            <p>San Antonio de Rivas, Pérez Zeledón</p>
+            <p>Quesos Jersey</p>
+            <p>San Antonio de Rivas, Pérez Zeledón, Costa Rica</p>
+            <p>Tel/WhatsApp: <a href="tel:+50657151979" style={{color:'inherit'}}>+506 5715-1979</a></p>
+            <p>Correo: <a href="mailto:joseacuna794@gmail.com" style={{color:'inherit'}}>joseacuna794@gmail.com</a></p>
+            <p>Lunes a Domingo · 6:00 AM – 6:00 PM</p>
           </div>
         </div>
         <p className="copyright">© {new Date().getFullYear()} Quesos Jersey. Todos los derechos reservados.</p>
       </footer>
+
+      {/* Botón flotante WhatsApp */}
+      <a
+        href="https://wa.me/50657151979?text=Hola%2C%20me%20interesa%20hacer%20un%20pedido%20de%20productos%20l%C3%A1cteos."
+        className="whatsapp-fab"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
     </div>
   );
 }
