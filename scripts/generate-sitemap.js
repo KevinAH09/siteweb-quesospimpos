@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SITE_URL = 'https://siteweb-quesospimpos.pages.dev';
+const SITE_URL = 'https://www.quesosjersey.com';
 
 // Agregar aquí cada ruta nueva que se cree en el sitio
 const routes = [

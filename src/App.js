@@ -27,7 +27,7 @@ import natilla from './assets/images/productos/natilla.webp';
 import logoColor from './assets/images/logo-color.webp';
 import logoFooter from './assets/images/logo-transparente-numero-blanco.webp';
 
-const SITE_URL = 'https://siteweb-quesospimpos.pages.dev';
+const SITE_URL = 'https://www.quesosjersey.com';
 const SITE_NAME = 'Quesos Jersey';
 
 const homeData = {
