@@ -1,8 +1,8 @@
 :root {
-  --cream: #f4f2ea;
+  --cream: #ece7db;
   --white: #ffffff;
-  --ink: #193726;
-  --green: #0d4f2d;
+  --ink: #104f2e;
+  --green: #104f2e;
   --green-soft: #2c6a44;
   --yellow: #f1ca3a;
   --beige: #ece7db;
@@ -16,7 +16,7 @@ body {
   margin: 0;
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   color: var(--ink);
-  background: var(--white);
+  background: var(--beige);
 }
 
 main {
@@ -585,13 +585,17 @@ nav {
 /* Logo styles for header and footer */
 .brand-logo {
   height: 44px;
+  width: auto;
   display: block;
   object-fit: contain;
+  max-width: 200px;
 }
 .footer-logo {
-  height: 100px;
+  height: 90px;
+  width: auto;
   display: block;
   object-fit: contain;
+  max-width: 260px;
   margin-bottom: 0.5rem;
 }
 .copyright-logo {
