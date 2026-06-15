@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1"/></head>
+<body style="margin:0;padding:0;background-color:#f0ede6;font-family:'Trebuchet MS','Segoe UI',Arial,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f0ede6;padding:32px 16px;">
+  <tr>
+    <td align="center">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">
+
+        <!-- ── HEADER ── -->
+        <tr>
+          <td style="background-color:#104f2e;border-radius:12px 12px 0 0;padding:24px 32px;text-align:center;">
+            <a href="https://www.quesosjersey.com" target="_blank" style="text-decoration:none;outline:none;">
+              <img
+                src="https://www.quesosjersey.com/favicon.png"
+                alt="Quesos Jersey"
+                height="60"
+                style="height:60px;width:auto;display:inline-block;vertical-align:middle;"
+              />
+            </a>
+            <p style="margin:10px 0 0;color:#f1ca3a;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:700;">
+              Nuevo mensaje del sitio web
+            </p>
+          </td>
+        </tr>
+
+        <!-- ── ALERTA ── -->
+        <tr>
+          <td style="background-color:#f1ca3a;padding:12px 32px;text-align:center;">
+            <p style="margin:0;font-weight:800;font-size:14px;color:#104f2e;">
+              🔔 &nbsp;Tiene un nuevo mensaje de contacto
+            </p>
+          </td>
+        </tr>
+
+        <!-- ── BODY ── -->
+        <tr>
+          <td style="background-color:#ffffff;padding:36px 36px 28px;">
+
+            <h1 style="font-size:20px;color:#104f2e;margin:0 0 6px;">
+              Mensaje de: <strong>{{from_name}}</strong>
+            </h1>
+            <div style="width:48px;height:3px;background-color:#f1ca3a;border-radius:99px;margin-bottom:24px;"></div>
+
+            <!-- Datos del cliente -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
+              <tr>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;width:120px;">
+                  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#104f2e;">Nombre</span>
+                </td>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;">
+                  <span style="color:#333;font-size:14px;">{{from_name}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;">
+                  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#104f2e;">Correo</span>
+                </td>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;">
+                  <a href="mailto:{{from_email}}" style="color:#104f2e;font-size:14px;">{{from_email}}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;">
+                  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#104f2e;">Teléfono</span>
+                </td>
+                <td style="padding:8px 0;border-bottom:1px solid #f0ede6;">
+                  <a href="tel:{{phone}}" style="color:#104f2e;font-size:14px;">{{phone}}</a>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Mensaje -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f3ef;border-left:4px solid #f1ca3a;border-radius:0 8px 8px 0;margin:0 0 24px;">
+              <tr>
+                <td style="padding:16px 20px;">
+                  <p style="margin:0 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#104f2e;">Mensaje del cliente</p>
+                  <p style="margin:0;color:#444;line-height:1.7;font-size:14px;">{{message}}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Botones de respuesta -->
+            <p style="color:#555;font-size:13px;margin:0 0 12px;font-weight:600;">Responder directamente:</p>
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding-right:12px;">
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="background-color:#104f2e;border-radius:999px;padding:11px 24px;">
+                        <a href="mailto:{{from_email}}" style="color:#ffffff;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">
+                          ✉️ Responder por correo
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="background-color:#25d366;border-radius:999px;padding:11px 24px;">
+                        <a href="https://wa.me/50657151979" target="_blank" style="color:#ffffff;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">
+                          📱 WhatsApp
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- ── DIVIDER ── -->
+        <tr>
+          <td style="background-color:#f1ca3a;height:4px;"></td>
+        </tr>
+
+        <!-- ── FOOTER ── -->
+        <tr>
+          <td style="background-color:#104f2e;border-radius:0 0 12px 12px;padding:20px 32px;text-align:center;">
+            <p style="margin:0 0 6px;color:rgba(255,255,255,0.9);font-size:13px;">
+              <a href="https://www.quesosjersey.com" style="color:#f1ca3a;text-decoration:none;font-weight:700;">quesosjersey.com</a>
+              &nbsp;·&nbsp;
+              <a href="tel:+50657151979" style="color:rgba(255,255,255,0.8);text-decoration:none;">+506 5715-1979</a>
+            </p>
+            <p style="margin:0;color:rgba(255,255,255,0.4);font-size:11px;">
+              Notificación automática del formulario de contacto — Quesos Jersey
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

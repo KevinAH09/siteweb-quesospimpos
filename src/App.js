@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './App.css';
@@ -643,7 +644,22 @@ function ProductosPage() {
   );
 }
 
+const EMAILJS_SERVICE  = 'service_n3rsf11';
+const EMAILJS_TEMPLATE = 'confir_envio_form';
+const EMAILJS_KEY      = 'UxrQv1JJSwm25KTOD';
+
 function ContactoPage() {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState('idle'); // idle | sending | ok | error
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('sending');
+    emailjs.sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, formRef.current, { publicKey: EMAILJS_KEY })
+      .then(() => { setStatus('ok'); formRef.current.reset(); })
+      .catch(() => setStatus('error'));
+  }
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
@@ -715,18 +731,34 @@ function ContactoPage() {
           <p><strong>Correo:</strong> joseacuna794@gmail.com</p>
         </article>
 
-        <form className="contact-form reveal">
+        <form className="contact-form reveal" ref={formRef} onSubmit={handleSubmit}>
           <h2>Escríbanos</h2>
           <label htmlFor="name">Nombre</label>
-          <input id="name" name="name" type="text" placeholder="Tu nombre" />
+          <input id="name" name="from_name" type="text" placeholder="Tu nombre" required />
 
           <label htmlFor="email">Correo</label>
-          <input id="email" name="email" type="email" placeholder="tu@correo.com" />
+          <input id="email" name="from_email" type="email" placeholder="tu@correo.com" required />
+
+          <label htmlFor="phone">Teléfono / WhatsApp</label>
+          <input id="phone" name="phone" type="tel" placeholder="+506 0000-0000" required />
 
           <label htmlFor="message">Mensaje</label>
-          <textarea id="message" name="message" rows="6" placeholder="Escribe tu consulta" />
+          <textarea id="message" name="message" rows="6" placeholder="Escribe tu consulta" required />
 
-          <button type="submit" className="main-cta reveal-button">Enviar mensaje</button>
+          <button type="submit" className="main-cta reveal-button" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
+          </button>
+
+          {status === 'ok' && (
+            <p style={{marginTop:'1rem',color:'#104f2e',fontWeight:700}}>
+              ✅ Mensaje enviado. Le respondemos pronto.
+            </p>
+          )}
+          {status === 'error' && (
+            <p style={{marginTop:'1rem',color:'#c0392b',fontWeight:700}}>
+              ❌ Hubo un error. Escríbanos por WhatsApp al +506 5715-1979.
+            </p>
+          )}
         </form>
       </section>
 
