@@ -644,19 +644,22 @@ function ProductosPage() {
   );
 }
 
-const EMAILJS_SERVICE  = 'service_n3rsf11';
-const EMAILJS_TEMPLATE = 'confir_envio_form';
-const EMAILJS_KEY      = 'UxrQv1JJSwm25KTOD';
+const EMAILJS_SERVICE         = 'service_n3rsf11';
+const EMAILJS_TEMPLATE_CLIENT = 'confir_envio_form';
+const EMAILJS_TEMPLATE_OWNER  = 'envio_form_site';
+const EMAILJS_KEY             = 'UxrQv1JJSwm25KTOD';
 
 function ContactoPage() {
   const formRef = useRef(null);
-  const [status, setStatus] = useState('idle'); // idle | sending | ok | error
+  const [status, setStatus] = useState('idle');
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus('sending');
-    emailjs.sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, formRef.current, { publicKey: EMAILJS_KEY })
-      .then(() => { setStatus('ok'); formRef.current.reset(); })
+    const form = formRef.current;
+    emailjs.sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CLIENT, form, { publicKey: EMAILJS_KEY })
+      .then(() => emailjs.sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE_OWNER, form, { publicKey: EMAILJS_KEY }))
+      .then(() => { setStatus('ok'); form.reset(); })
       .catch(() => setStatus('error'));
   }
 
