@@ -810,9 +810,9 @@ const PRODUCT_LANDINGS = {
     image: leche4,
     imageAlt: 'Leche entera natural Quesos Jersey al por mayor para pulperías y negocios en Pérez Zeledón',
     seo: {
-      title: 'Proveedor de Leche Entera al por Mayor | Quesos Jersey Pérez Zeledón',
-      description: 'Distribución de leche entera 100% pura y natural para pulperías, mini supers y negocios. Abastecimiento constante y frescura garantizada. ¡Cotice hoy!',
-      keywords: 'leche entera al por mayor Pérez Zeledón, proveedor leche fresca pulperías Costa Rica, distribución leche natural, comprar leche entera negocio, abastecedor lácteos'
+      title: 'Proveedor de Leche Entera al por Mayor en Pérez Zeledón | Quesos Jersey',
+      description: 'Distribución de leche entera 100% pura y natural para pulperías, mini supers y negocios en Pérez Zeledón. Abastecimiento constante y frescura garantizada. ¡Cotice hoy!',
+      keywords: 'leche entera al por mayor Pérez Zeledón, proveedor leche fresca pulperías Pérez Zeledón Costa Rica, distribución leche natural Pérez Zeledón, comprar leche entera negocio, abastecedor lácteos San Antonio de Rivas'
     },
     h1: 'Leche Entera al por Mayor para Negocios',
     intro: 'Ofrezca en las neveras de su negocio una leche auténtica que destaca por su pureza. En Quesos Jersey procesamos diariamente leche 100% pura, sin descremar, que conserva toda su cremosidad y valor nutricional intactos. Somos el aliado estratégico para pulperías, abastecedores y supermercados locales que buscan fidelizar a sus clientes con productos lácteos de calidad premium directamente desde el productor.',
@@ -828,11 +828,11 @@ const PRODUCT_LANDINGS = {
   'queso-tierno': {
     name: 'Queso Tierno Artesanal',
     image: queso3,
-    imageAlt: 'Queso tierno artesanal Quesos Jersey al por mayor para pulperías y negocios',
+    imageAlt: 'Queso tierno artesanal Quesos Jersey distribuidor para negocios y sodas en Pérez Zeledón',
     seo: {
-      title: 'Distribuidor de Queso Tierno al por Mayor | Quesos Jersey',
-      description: 'Compre queso tierno artesanal por kilo para su negocio. Calidad constante, prensado en frío y 100% natural. Envíos y precios especiales por volumen.',
-      keywords: 'queso tierno al por mayor, distribuidor queso artesanal Pérez Zeledón, comprar queso tierno kilo pulperías, proveedor queso fresco Costa Rica'
+      title: 'Distribuidor de Queso Tierno para Negocios y Sodas en Pérez Zeledón | Quesos Jersey',
+      description: 'Distribuidor de queso tierno artesanal para negocios y sodas en Pérez Zeledón. Precio por kilo, calidad constante y 100% natural. ¡Consulte precios de mayoreo!',
+      keywords: 'distribuidor queso tierno Pérez Zeledón, queso tierno para sodas y negocios Pérez Zeledón, queso tierno al por mayor Costa Rica, proveedor queso artesanal San Antonio de Rivas, queso fresco mayoreo Pérez Zeledón'
     },
     h1: 'Queso Tierno Artesanal al por Mayor',
     intro: 'El queso tierno es un producto indispensable en la mesa costarricense y un dinamizador de ventas para cualquier pulpería o mini super. Nuestro Queso Tierno Artesanal se elabora diariamente utilizando únicamente leche entera de primera calidad. Mediante un proceso de prensado en frío totalmente natural, logramos la textura, el punto de sal y la frescura exacta que el consumidor de Pérez Zeledón y todo el país exige.',
@@ -848,11 +848,11 @@ const PRODUCT_LANDINGS = {
   'natilla': {
     name: 'Natilla de la Casa',
     image: natilla,
-    imageAlt: 'Natilla casera Quesos Jersey al por mayor para pulperías y sodas Costa Rica',
+    imageAlt: 'Natilla casera Quesos Jersey al por mayor para pulperías y sodas en Pérez Zeledón',
     seo: {
-      title: 'Proveedor de Natilla Casera al por Mayor | Quesos Jersey',
-      description: 'Natilla casera 100% natural para pulperías, mini supers y sodas. El auténtico sabor de campo, libre de químicos. Precios directos de fábrica.',
-      keywords: 'natilla casera al por mayor, proveedor natilla pulperías Costa Rica, natilla artesanal sin conservantes Pérez Zeledón, natilla natural distribuidora'
+      title: 'Proveedor de Natilla Casera al por Mayor en Pérez Zeledón | Quesos Jersey',
+      description: 'Natilla casera 100% natural para pulperías, mini supers y sodas en Pérez Zeledón. El auténtico sabor de campo, libre de químicos. Precios directos de fábrica.',
+      keywords: 'natilla casera al por mayor Pérez Zeledón, proveedor natilla pulperías Pérez Zeledón Costa Rica, natilla artesanal sin conservantes San Antonio de Rivas, natilla natural distribuidora Pérez Zeledón'
     },
     h1: 'Natilla Casera al por Mayor',
     intro: 'Diferencie la oferta de lácteos en su negocio con el verdadero sabor de antes. La Natilla Casera de Quesos Jersey se elabora bajo una receta tradicional, utilizando únicamente crema de leche pura seleccionada. Al ser un producto 100% natural, libre de químicos, almidones o espesantes artificiales, ofrece esa textura cremosa y el balance de acidez único que los clientes de pulperías y sodas reconocen de inmediato.',
@@ -863,16 +863,16 @@ const PRODUCT_LANDINGS = {
       { icon: 'fas fa-tags', title: 'Margen de Ganancia Competitivo', text: 'Precios directos de productor que le permiten competir con ventaja en su zona.' },
       { icon: 'fas fa-bowl-food', title: 'El Aliado del Gallo Pinto', text: 'Por su consistencia y sabor casero, es la favorita de las sodas y restaurantes locales para acompañar los desayunos tradicionales.' }
     ],
-    extra: null
+    extra: { h2: 'La Preferida de las Sodas y Comidas Típicas de Pérez Zeledón', text: 'Desde el gallo pinto del desayuno hasta las patacones de la merienda, nuestra natilla casera es el complemento indispensable que eleva cualquier plato típico. Con su consistencia cremosa y sabor natural, es la elegida por sodas, restaurantes de comida criolla y familias de Pérez Zeledón que exigen lo auténtico.' }
   },
   'leche-agria': {
     name: 'Leche Agria Tradicional',
     image: leche2,
     imageAlt: 'Leche agria tradicional Quesos Jersey al por mayor para comercios y sodas Pérez Zeledón',
     seo: {
-      title: 'Leche Agria al por Mayor | Distribución para Negocios y Sodas',
-      description: 'Abastezca su pulpería o restaurante con la mejor Leche Agria Tradicional de Pérez Zeledón. Consistencia ideal y sabor de campo. Precios de fábrica.',
-      keywords: 'leche agria al por mayor, distribución leche agria pulperías Costa Rica, proveedor leche agria Pérez Zeledón, leche agria tradicional natural negocios'
+      title: 'Leche Agria al por Mayor para Negocios y Sodas en Pérez Zeledón | Quesos Jersey',
+      description: 'Abastezca su pulpería o restaurante con la mejor Leche Agria Tradicional de Pérez Zeledón. Consistencia ideal, sabor de campo y precios directos de fábrica.',
+      keywords: 'leche agria al por mayor Pérez Zeledón, distribución leche agria pulperías Pérez Zeledón Costa Rica, proveedor leche agria San Antonio de Rivas, leche agria tradicional negocios sodas Pérez Zeledón'
     },
     h1: 'Leche Agria por Volumen para Comercios',
     intro: 'Incorpore a su portafolio de productos un clásico de la gastronomía costarricense que nunca pasa de moda. Nuestra Leche Agria Tradicional es el acompañamiento perfecto para los platos típicos, elaborada cuidadosamente para alcanzar la consistencia ideal y ese característico sabor del campo que evoca el hogar. Es el producto preferido por sodas, restaurantes de comida criolla y pulperías locales de tradición.',
@@ -883,7 +883,7 @@ const PRODUCT_LANDINGS = {
       { icon: 'fas fa-leaf', title: 'Frescura de Origen', text: 'Procesada con los más altos estándares higiénicos en San Antonio de Rivas, garantizando una vida útil óptima en refrigeración.' },
       { icon: 'fas fa-handshake', title: 'Precio Directo de Productor', text: 'Sin intermediarios, sin sobrecostos. Negociamos volumen y frecuencia de entrega para que su negocio sea más rentable.' }
     ],
-    extra: null
+    extra: { h2: 'La Aliada de la Gastronomía Criolla en Pérez Zeledón', text: 'Presente en cada desayuno costarricense y en los platos de las mejores sodas de la zona, nuestra leche agria aporta ese toque único que transforma un simple gallo pinto en una experiencia de sabor auténtico. Por eso la eligen restaurantes, sodas y familias que no están dispuestas a sacrificar la calidad por lo industrial.' }
   }
 };
 
@@ -948,7 +948,7 @@ function ProductLandingPage({ slug }) {
       <WaveDivider tone="beige" />
 
       <section className="products-zone products-zone-diferencia">
-        <div className="container">
+        <div className="container" style={{ textAlign: 'center' }}>
           <p className="eyebrow">Para su negocio</p>
           <h2 className="reveal reveal-title">{data.benefitsTitle}</h2>
           <div className="icon-grid">
@@ -963,15 +963,13 @@ function ProductLandingPage({ slug }) {
         </div>
       </section>
 
-      {data.extra && (
-        <>
-          <WaveDivider tone="white" />
-          <section className="container" style={{ padding: '3rem 0' }}>
-            <h2 className="reveal reveal-title" style={{ maxWidth: '720px' }}>{data.extra.h2}</h2>
-            <p style={{ maxWidth: '720px', lineHeight: '1.65' }}>{data.extra.text}</p>
-          </section>
-        </>
-      )}
+      <section className="image-cta-section">
+        <div className="image-cta-overlay" />
+        <div className="container image-cta-content">
+          <h2 className="reveal reveal-title">{data.extra.h2}</h2>
+          <p>{data.extra.text}</p>
+        </div>
+      </section>
 
       <WaveDivider tone="green" />
 
@@ -982,18 +980,6 @@ function ProductLandingPage({ slug }) {
           <p style={{ marginBottom: 0 }}>Atendemos pulperías, sodas y negocios con entregas semanales en Pérez Zeledón.</p>
         </div>
         <ContactSection />
-      </section>
-
-      <WaveDivider tone="beige" />
-      <section className="map-zone">
-        <div className="container map-wrap">
-          <iframe
-            title="Ubicacion de Quesos Jersey"
-            src="https://www.google.com/maps?q=San+Antonio+de+Rivas+Perez+Zeledon+Costa+Rica&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
       </section>
     </>
   );

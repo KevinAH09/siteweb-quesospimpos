@@ -1083,6 +1083,7 @@ nav {
   z-index: 4;
 }
 
+.image-cta-content h2,
 .image-cta-content h3 {
   margin: 0;
   font-size: clamp(1.45rem, 3vw, 2rem);
