@@ -1132,8 +1132,21 @@ nav {
   padding: 0 0.9rem 0.9rem;
 }
 
+.gallery-card-more {
+  display: inline-block;
+  margin: 0.2rem 0.9rem 1.1rem;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.gallery-card-more:hover {
+  text-decoration: underline;
+}
+
 .contact-page {
-  padding: 5rem 0 1.2rem;
+  padding: 2.5rem 0 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
@@ -1183,10 +1196,15 @@ nav {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 0.75fr 1fr 1fr;
   gap: 1rem;
   padding: 1.6rem 0 1.2rem;
-  padding-left: 8%;
+  padding-left: 4%;
+}
+
+.footer-product-link {
+  font-size: 0.875em;
+  opacity: 0.85;
 }
 
 .footer-content h3,
@@ -1220,9 +1238,13 @@ nav {
   .efficiency,
   .support-grid,
   .testimonial-zone,
-  .footer-content,
   .contact-page {
     grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 0;
   }
 
   .process-split {
@@ -1365,7 +1387,8 @@ nav {
   .icon-grid,
   .intro-gallery,
   .gallery-grid,
-  .nosotros-gallery-grid {
+  .nosotros-gallery-grid,
+  .footer-content {
     grid-template-columns: 1fr;
   }
 

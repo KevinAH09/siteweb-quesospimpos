@@ -5,10 +5,14 @@ const SITE_URL = 'https://www.quesosjersey.com';
 
 // Agregar aquí cada ruta nueva que se cree en el sitio
 const routes = [
-  { path: '/',          priority: '1.0', changefreq: 'monthly' },
-  { path: '/nosotros',  priority: '0.8', changefreq: 'monthly' },
-  { path: '/productos', priority: '0.9', changefreq: 'monthly' },
-  { path: '/contacto',  priority: '0.7', changefreq: 'yearly'  },
+  { path: '/',                           priority: '1.0', changefreq: 'monthly' },
+  { path: '/nosotros',                   priority: '0.8', changefreq: 'monthly' },
+  { path: '/productos',                  priority: '0.9', changefreq: 'monthly' },
+  { path: '/productos/leche-entera',     priority: '0.85', changefreq: 'monthly' },
+  { path: '/productos/queso-tierno',     priority: '0.85', changefreq: 'monthly' },
+  { path: '/productos/natilla',          priority: '0.85', changefreq: 'monthly' },
+  { path: '/productos/leche-agria',      priority: '0.85', changefreq: 'monthly' },
+  { path: '/contacto',                   priority: '0.7', changefreq: 'yearly'  },
 ];
 
 const today = new Date().toISOString().split('T')[0];

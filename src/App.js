@@ -27,6 +27,7 @@ import galeriaN6 from './assets/images/galeria-nuevas6.webp';
 import natilla from './assets/images/productos/natilla.webp';
 import logoColor from './assets/images/logo-color.webp';
 import logoFooter from './assets/images/logo-transparente-numero-blanco.webp';
+import leche2 from './assets/images/productos/leche-2.webp';
 
 const SITE_URL = 'https://www.quesosjersey.com';
 const SITE_NAME = 'Quesos Jersey';
@@ -150,7 +151,7 @@ function useEntranceAnimations() {
   }, [pathname]);
 }
 
-function PageBanner({ title }) {
+function PageBanner({ title, parentLabel, parentPath }) {
   return (
     <section className="inner-hero head-breadcrumbs">
       <div className="container">
@@ -158,6 +159,12 @@ function PageBanner({ title }) {
         <p className="crumbs">
           <Link to="/">Inicio</Link>
           <span>/</span>
+          {parentLabel && parentPath && (
+            <>
+              <Link to={parentPath}>{parentLabel}</Link>
+              <span>/</span>
+            </>
+          )}
           <strong>{title}</strong>
         </p>
       </div>
@@ -593,10 +600,10 @@ function ProductosPage() {
   };
 
   const productGallery = [
-    { title: 'Leche Entera Natural', image: leche4, description: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' },
-    { title: 'Queso Tierno Artesanal', image: queso3, description: 'Elaborado diariamente con leche entera de calidad y prensado en frío, mediante un proceso totalmente natural.', formats: 'Venta: por kilogramo' },
-    { title: 'Natilla de la Casa', image: natilla, description: 'Producida bajo una receta única familiar. Es 100% natural y libre de químicos.', formats: 'Presentaciones: 250g y 500g' },
-    { title: 'Leche Agria Tradicional', image: leche4, description: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' }
+    { slug: 'leche-entera', title: 'Leche Entera Natural', image: leche4, description: 'Leche 100% pura, sin descremar, conservando toda su cremosidad y valor nutricional.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' },
+    { slug: 'queso-tierno', title: 'Queso Tierno Artesanal', image: queso3, description: 'Elaborado diariamente con leche entera de calidad y prensado en frío, mediante un proceso totalmente natural.', formats: 'Venta: por kilogramo' },
+    { slug: 'natilla', title: 'Natilla de la Casa', image: natilla, description: 'Producida bajo una receta única familiar. Es 100% natural y libre de químicos.', formats: 'Presentaciones: 250g y 500g' },
+    { slug: 'leche-agria', title: 'Leche Agria Tradicional', image: leche2, description: 'El acompañamiento perfecto con la consistencia ideal y el sabor del campo.', formats: 'Presentaciones: 1L, 1.5L, 2L y 3L' }
   ];
 
   return (
@@ -626,6 +633,7 @@ function ProductosPage() {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <small>{item.formats}</small>
+              <Link to={`/productos/${item.slug}`} className="gallery-card-more">Ver detalles →</Link>
             </article>
           ))}
         </div>
@@ -649,7 +657,7 @@ const EMAILJS_TEMPLATE_CLIENT = 'confir_envio_form';
 const EMAILJS_TEMPLATE_OWNER  = 'envio_form_site';
 const EMAILJS_KEY             = 'UxrQv1JJSwm25KTOD';
 
-function ContactoPage() {
+function ContactSection() {
   const formRef = useRef(null);
   const [status, setStatus] = useState('idle');
 
@@ -663,6 +671,51 @@ function ContactoPage() {
       .catch(() => setStatus('error'));
   }
 
+  return (
+    <section className="container contact-page">
+      <article className="contact-info reveal">
+        <h2>¡Haga su pedido hoy mismo!</h2>
+        <p>Atendemos hogares, pulperías y negocios con entregas semanales programadas en Pérez Zeledón.</p>
+        <p><strong>Horario:</strong> Lunes a Domingo de 6:00 AM a 6:00 PM</p>
+        <p><strong>Ubicación:</strong> San Antonio de Rivas, Pérez Zeledón</p>
+        <p><strong>WhatsApp/Tel:</strong> +506 5715-1979</p>
+        <p><strong>Correo:</strong> joseacuna794@gmail.com</p>
+      </article>
+
+      <form className="contact-form reveal" ref={formRef} onSubmit={handleSubmit}>
+        <h2>Escríbanos</h2>
+        <label htmlFor="from_name">Nombre</label>
+        <input id="from_name" name="from_name" type="text" placeholder="Tu nombre" required />
+
+        <label htmlFor="from_email">Correo</label>
+        <input id="from_email" name="from_email" type="email" placeholder="tu@correo.com" required />
+
+        <label htmlFor="phone">Teléfono / WhatsApp</label>
+        <input id="phone" name="phone" type="tel" placeholder="+506 0000-0000" required />
+
+        <label htmlFor="message">Mensaje</label>
+        <textarea id="message" name="message" rows="6" placeholder="Escribe tu consulta" required />
+
+        <button type="submit" className="main-cta reveal-button" disabled={status === 'sending'}>
+          {status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
+        </button>
+
+        {status === 'ok' && (
+          <p style={{marginTop:'1rem',color:'#104f2e',fontWeight:700}}>
+            ✅ Mensaje enviado. Le respondemos pronto.
+          </p>
+        )}
+        {status === 'error' && (
+          <p style={{marginTop:'1rem',color:'#c0392b',fontWeight:700}}>
+            ❌ Hubo un error. Escríbanos por WhatsApp al +506 5715-1979.
+          </p>
+        )}
+      </form>
+    </section>
+  );
+}
+
+function ContactoPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
@@ -724,46 +777,7 @@ function ContactoPage() {
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       <PageBanner title="Contacto" />
-      <section className="container contact-page">
-        <article className="contact-info reveal">
-          <h2>¡Haga su pedido hoy mismo!</h2>
-          <p>Atendemos hogares, pulperías y negocios con entregas semanales programadas en Pérez Zeledón.</p>
-          <p><strong>Horario:</strong> Lunes a Domingo de 6:00 AM a 6:00 PM</p>
-          <p><strong>Ubicación:</strong> San Antonio de Rivas, Pérez Zeledón</p>
-          <p><strong>WhatsApp/Tel:</strong> +506 5715-1979</p>
-          <p><strong>Correo:</strong> joseacuna794@gmail.com</p>
-        </article>
-
-        <form className="contact-form reveal" ref={formRef} onSubmit={handleSubmit}>
-          <h2>Escríbanos</h2>
-          <label htmlFor="name">Nombre</label>
-          <input id="name" name="from_name" type="text" placeholder="Tu nombre" required />
-
-          <label htmlFor="email">Correo</label>
-          <input id="email" name="from_email" type="email" placeholder="tu@correo.com" required />
-
-          <label htmlFor="phone">Teléfono / WhatsApp</label>
-          <input id="phone" name="phone" type="tel" placeholder="+506 0000-0000" required />
-
-          <label htmlFor="message">Mensaje</label>
-          <textarea id="message" name="message" rows="6" placeholder="Escribe tu consulta" required />
-
-          <button type="submit" className="main-cta reveal-button" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
-          </button>
-
-          {status === 'ok' && (
-            <p style={{marginTop:'1rem',color:'#104f2e',fontWeight:700}}>
-              ✅ Mensaje enviado. Le respondemos pronto.
-            </p>
-          )}
-          {status === 'error' && (
-            <p style={{marginTop:'1rem',color:'#c0392b',fontWeight:700}}>
-              ❌ Hubo un error. Escríbanos por WhatsApp al +506 5715-1979.
-            </p>
-          )}
-        </form>
-      </section>
+      <ContactSection />
 
       <WaveDivider tone="beige" />
       <section className="map-zone">
@@ -788,6 +802,201 @@ function ScrollToTop() {
   }, [pathname]);
 
   return null;
+}
+
+const PRODUCT_LANDINGS = {
+  'leche-entera': {
+    name: 'Leche Entera Natural',
+    image: leche4,
+    imageAlt: 'Leche entera natural Quesos Jersey al por mayor para pulperías y negocios en Pérez Zeledón',
+    seo: {
+      title: 'Proveedor de Leche Entera al por Mayor | Quesos Jersey Pérez Zeledón',
+      description: 'Distribución de leche entera 100% pura y natural para pulperías, mini supers y negocios. Abastecimiento constante y frescura garantizada. ¡Cotice hoy!',
+      keywords: 'leche entera al por mayor Pérez Zeledón, proveedor leche fresca pulperías Costa Rica, distribución leche natural, comprar leche entera negocio, abastecedor lácteos'
+    },
+    h1: 'Leche Entera al por Mayor para Negocios',
+    intro: 'Ofrezca en las neveras de su negocio una leche auténtica que destaca por su pureza. En Quesos Jersey procesamos diariamente leche 100% pura, sin descremar, que conserva toda su cremosidad y valor nutricional intactos. Somos el aliado estratégico para pulperías, abastecedores y supermercados locales que buscan fidelizar a sus clientes con productos lácteos de calidad premium directamente desde el productor.',
+    formats: { label: 'Presentaciones disponibles', items: ['1 Litro', '1.5 Litros', '2 Litros', '3 Litros'] },
+    benefitsTitle: 'Ventajas de distribuir nuestra Leche Entera en su Pulpería o Mini Super',
+    benefits: [
+      { icon: 'fas fa-leaf', title: 'Calidad Inalterada', text: 'Leche entera natural libre de aditivos artificiales, ideal para familias que buscan lo saludable.' },
+      { icon: 'fas fa-truck-fast', title: 'Abastecimiento Garantizado', text: 'Logística eficiente para asegurar que sus cámaras frías nunca se queden sin stock.' },
+      { icon: 'fas fa-store', title: 'Alta Rotación en Tienda', text: 'Presentaciones de 1L a 3L adaptadas al consumo diario y familiar para maximizar su inventario.' }
+    ],
+    extra: { h2: 'Ideal para el Sector Gastronómico (Cafeterías y Reposterías)', text: 'Al conservar su grasa natural y cremosidad original, nuestra leche es la base perfecta para cafeterías artesanales que buscan el texturizado ideal en el café y para reposterías que requieren consistencia en sus recetas de alta calidad.' }
+  },
+  'queso-tierno': {
+    name: 'Queso Tierno Artesanal',
+    image: queso3,
+    imageAlt: 'Queso tierno artesanal Quesos Jersey al por mayor para pulperías y negocios',
+    seo: {
+      title: 'Distribuidor de Queso Tierno al por Mayor | Quesos Jersey',
+      description: 'Compre queso tierno artesanal por kilo para su negocio. Calidad constante, prensado en frío y 100% natural. Envíos y precios especiales por volumen.',
+      keywords: 'queso tierno al por mayor, distribuidor queso artesanal Pérez Zeledón, comprar queso tierno kilo pulperías, proveedor queso fresco Costa Rica'
+    },
+    h1: 'Queso Tierno Artesanal al por Mayor',
+    intro: 'El queso tierno es un producto indispensable en la mesa costarricense y un dinamizador de ventas para cualquier pulpería o mini super. Nuestro Queso Tierno Artesanal se elabora diariamente utilizando únicamente leche entera de primera calidad. Mediante un proceso de prensado en frío totalmente natural, logramos la textura, el punto de sal y la frescura exacta que el consumidor de Pérez Zeledón y todo el país exige.',
+    formats: { label: 'Formato de venta', items: ['Por kilogramo – precio especial según volumen'] },
+    benefitsTitle: '¿Por qué elegir nuestro Queso Tierno como proveedor mayorista?',
+    benefits: [
+      { icon: 'fas fa-scale-balanced', title: 'Venta Flexible por Kilogramo', text: 'Nos adaptamos al volumen de compra que su negocio o distribuidora requiera, ofreciendo atractivos márgenes de ganancia.' },
+      { icon: 'fas fa-cheese', title: 'Sabor Artesanal Constante', text: 'A diferencia de los quesos industriales, el nuestro mantiene la esencia del campo, lo que asegura la recompra de sus clientes.' },
+      { icon: 'fas fa-award', title: 'Rendimiento Superior', text: 'Su óptimo proceso de prensado evita el exceso de suero, garantizando que usted paga por peso real de queso utilizable.' }
+    ],
+    extra: { h2: 'Su aliado en Ventas para Abastecedores y Sector Horeca', text: 'Ya sea para rebanar y vender al detalle en su fiambrería, o como ingrediente estrella en sodas y restaurantes para las tradicionales galletas, gallos o desayunos, nuestro queso tierno garantiza el sabor criollo que enamora al paladar.' }
+  },
+  'natilla': {
+    name: 'Natilla de la Casa',
+    image: natilla,
+    imageAlt: 'Natilla casera Quesos Jersey al por mayor para pulperías y sodas Costa Rica',
+    seo: {
+      title: 'Proveedor de Natilla Casera al por Mayor | Quesos Jersey',
+      description: 'Natilla casera 100% natural para pulperías, mini supers y sodas. El auténtico sabor de campo, libre de químicos. Precios directos de fábrica.',
+      keywords: 'natilla casera al por mayor, proveedor natilla pulperías Costa Rica, natilla artesanal sin conservantes Pérez Zeledón, natilla natural distribuidora'
+    },
+    h1: 'Natilla Casera al por Mayor',
+    intro: 'Diferencie la oferta de lácteos en su negocio con el verdadero sabor de antes. La Natilla Casera de Quesos Jersey se elabora bajo una receta tradicional, utilizando únicamente crema de leche pura seleccionada. Al ser un producto 100% natural, libre de químicos, almidones o espesantes artificiales, ofrece esa textura cremosa y el balance de acidez único que los clientes de pulperías y sodas reconocen de inmediato.',
+    formats: { label: 'Presentaciones comerciales', items: ['250g – Consumo semanal, familias pequeñas', '500g – Formato familiar de gran demanda'] },
+    benefitsTitle: 'Ventajas para su Pulpería, Mini Super o Soda',
+    benefits: [
+      { icon: 'fas fa-star', title: 'Calidad 100% Artesanal', text: 'Atraiga a clientes que huyen de las marcas industriales y buscan lo natural.' },
+      { icon: 'fas fa-tags', title: 'Margen de Ganancia Competitivo', text: 'Precios directos de productor que le permiten competir con ventaja en su zona.' },
+      { icon: 'fas fa-bowl-food', title: 'El Aliado del Gallo Pinto', text: 'Por su consistencia y sabor casero, es la favorita de las sodas y restaurantes locales para acompañar los desayunos tradicionales.' }
+    ],
+    extra: null
+  },
+  'leche-agria': {
+    name: 'Leche Agria Tradicional',
+    image: leche2,
+    imageAlt: 'Leche agria tradicional Quesos Jersey al por mayor para comercios y sodas Pérez Zeledón',
+    seo: {
+      title: 'Leche Agria al por Mayor | Distribución para Negocios y Sodas',
+      description: 'Abastezca su pulpería o restaurante con la mejor Leche Agria Tradicional de Pérez Zeledón. Consistencia ideal y sabor de campo. Precios de fábrica.',
+      keywords: 'leche agria al por mayor, distribución leche agria pulperías Costa Rica, proveedor leche agria Pérez Zeledón, leche agria tradicional natural negocios'
+    },
+    h1: 'Leche Agria por Volumen para Comercios',
+    intro: 'Incorpore a su portafolio de productos un clásico de la gastronomía costarricense que nunca pasa de moda. Nuestra Leche Agria Tradicional es el acompañamiento perfecto para los platos típicos, elaborada cuidadosamente para alcanzar la consistencia ideal y ese característico sabor del campo que evoca el hogar. Es el producto preferido por sodas, restaurantes de comida criolla y pulperías locales de tradición.',
+    formats: { label: 'Formatos al por mayor', items: ['1L y 1.5L – Exhibición en cámaras frías, ideal para pulperías', '2L y 3L – Alto rendimiento para cocina y familias numerosas'] },
+    benefitsTitle: 'Razones para elegir a Quesos Jersey como su Distribuidor',
+    benefits: [
+      { icon: 'fas fa-check-circle', title: 'Consistencia de Producto', text: 'Aseguramos que cada lote mantenga el mismo nivel de acidez y espesor, protegiendo la reputación de su cocina o negocio.' },
+      { icon: 'fas fa-leaf', title: 'Frescura de Origen', text: 'Procesada con los más altos estándares higiénicos en San Antonio de Rivas, garantizando una vida útil óptima en refrigeración.' },
+      { icon: 'fas fa-handshake', title: 'Precio Directo de Productor', text: 'Sin intermediarios, sin sobrecostos. Negociamos volumen y frecuencia de entrega para que su negocio sea más rentable.' }
+    ],
+    extra: null
+  }
+};
+
+function ProductLandingPage({ slug }) {
+  const data = PRODUCT_LANDINGS[slug];
+  if (!data) return null;
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: data.name,
+    description: data.intro,
+    brand: { '@type': 'Brand', name: SITE_NAME },
+    image: `${SITE_URL}/logo512.png`,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'CRC',
+      seller: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        telephone: '+50657151979',
+        url: SITE_URL
+      }
+    }
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>{data.seo.title}</title>
+        <meta name="description" content={data.seo.description} />
+        <link rel="canonical" href={`${SITE_URL}/productos/${slug}`} />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={`${SITE_URL}/productos/${slug}`} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={data.seo.title} />
+        <meta property="og:description" content={data.seo.description} />
+        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={data.seo.title} />
+        <meta name="twitter:description" content={data.seo.description} />
+        <meta name="keywords" content={data.seo.keywords} />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
+
+      <PageBanner title={data.name} parentLabel="Productos" parentPath="/productos" />
+
+      <section className="container efficiency">
+        <div>
+          <p className="eyebrow">Quesos Jersey</p>
+          <h2 className="reveal reveal-title">{data.h1}</h2>
+          <p>{data.intro}</p>
+          <p><strong>{data.formats.label}:</strong></p>
+          <ul>
+            {data.formats.items.map((f) => <li key={f}>{f}</li>)}
+          </ul>
+        </div>
+        <img className="reveal reveal-image" src={data.image} alt={data.imageAlt} loading="lazy" />
+      </section>
+
+      <WaveDivider tone="beige" />
+
+      <section className="products-zone products-zone-diferencia">
+        <div className="container">
+          <p className="eyebrow">Para su negocio</p>
+          <h2 className="reveal reveal-title">{data.benefitsTitle}</h2>
+          <div className="icon-grid">
+            {data.benefits.map((b) => (
+              <article className="reveal" key={b.title}>
+                <div className="icon"><i className={b.icon} aria-hidden="true" /></div>
+                <h3>{b.title}</h3>
+                <p>{b.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {data.extra && (
+        <>
+          <WaveDivider tone="white" />
+          <section className="container" style={{ padding: '3rem 0' }}>
+            <h2 className="reveal reveal-title" style={{ maxWidth: '720px' }}>{data.extra.h2}</h2>
+            <p style={{ maxWidth: '720px', lineHeight: '1.65' }}>{data.extra.text}</p>
+          </section>
+        </>
+      )}
+
+      <WaveDivider tone="green" />
+
+      <section style={{ background: 'var(--beige)', paddingTop: '2.5rem', paddingBottom: '0' }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+          <p className="eyebrow">Pedidos y Cotizaciones</p>
+          <h2 className="reveal reveal-title" style={{ fontSize: 'clamp(1.4rem,3vw,2rem)' }}>Solicite su pedido al por mayor</h2>
+          <p style={{ marginBottom: 0 }}>Atendemos pulperías, sodas y negocios con entregas semanales en Pérez Zeledón.</p>
+        </div>
+        <ContactSection />
+      </section>
+
+      <WaveDivider tone="beige" />
+      <section className="map-zone">
+        <div className="container map-wrap">
+          <iframe
+            title="Ubicacion de Quesos Jersey"
+            src="https://www.google.com/maps?q=San+Antonio+de+Rivas+Perez+Zeledon+Costa+Rica&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+    </>
+  );
 }
 
 function SiteLayout() {
@@ -827,6 +1036,10 @@ function SiteLayout() {
           <Route path="/" element={<HomePage />} />
           <Route path="/nosotros" element={<NosotrosPage />} />
           <Route path="/productos" element={<ProductosPage />} />
+          <Route path="/productos/leche-entera" element={<ProductLandingPage slug="leche-entera" />} />
+          <Route path="/productos/queso-tierno" element={<ProductLandingPage slug="queso-tierno" />} />
+          <Route path="/productos/natilla" element={<ProductLandingPage slug="natilla" />} />
+          <Route path="/productos/leche-agria" element={<ProductLandingPage slug="leche-agria" />} />
           <Route path="/contacto" element={<ContactoPage />} />
         </Routes>
       </main>
@@ -838,11 +1051,18 @@ function SiteLayout() {
             <p>Ser la marca regional referente en confianza y sabor, destacando por nuestra constancia operativa y trato humano.</p>
           </div>
           <div>
-            <h4>Enlaces</h4>
+            <h4>Navegación</h4>
             <p><Link to="/">Inicio</Link></p>
             <p><Link to="/nosotros">Nosotros</Link></p>
-            <p><Link to="/productos">Productos</Link></p>
             <p><Link to="/contacto">Contacto</Link></p>
+          </div>
+          <div>
+            <h4>Productos</h4>
+            <p><Link to="/productos">Todos los productos</Link></p>
+            <p className="footer-product-link"><Link to="/productos/leche-entera">Leche Entera Natural</Link></p>
+            <p className="footer-product-link"><Link to="/productos/queso-tierno">Queso Tierno Artesanal</Link></p>
+            <p className="footer-product-link"><Link to="/productos/natilla">Natilla de la Casa</Link></p>
+            <p className="footer-product-link"><Link to="/productos/leche-agria">Leche Agria Tradicional</Link></p>
           </div>
           <div>
             <h4>Contacto</h4>
