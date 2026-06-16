@@ -951,7 +951,7 @@ function ProductLandingPage({ slug }) {
         <div className="container" style={{ textAlign: 'center' }}>
           <p className="eyebrow">Para su negocio</p>
           <h2 className="reveal reveal-title">{data.benefitsTitle}</h2>
-          <div className="icon-grid">
+          <div className="icon-grid icon-grid-3">
             {data.benefits.map((b) => (
               <article className="reveal" key={b.title}>
                 <div className="icon"><i className={b.icon} aria-hidden="true" /></div>
@@ -971,9 +971,7 @@ function ProductLandingPage({ slug }) {
         </div>
       </section>
 
-      <WaveDivider tone="green" />
-
-      <section style={{ background: 'var(--beige)', paddingTop: '2.5rem', paddingBottom: '0' }}>
+      <section style={{ background: 'var(--beige)', paddingTop: '3.5rem', paddingBottom: '3.5rem' }}>
         <div className="container" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
           <p className="eyebrow">Pedidos y Cotizaciones</p>
           <h2 className="reveal reveal-title" style={{ fontSize: 'clamp(1.4rem,3vw,2rem)' }}>Solicite su pedido al por mayor</h2>
