@@ -27,8 +27,7 @@
     "build": "node scripts/generate-sitemap.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "npm run build && wrangler deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -49,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "puppeteer": "^25.1.0"
   }
 }
