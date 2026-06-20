@@ -1038,11 +1038,11 @@ function SiteLayout() {
             <h4>Navegación</h4>
             <p><Link to="/">Inicio</Link></p>
             <p><Link to="/nosotros">Nosotros</Link></p>
+            <p><Link to="/productos">Productos</Link></p>
             <p><Link to="/contacto">Contacto</Link></p>
           </div>
           <div>
             <h4>Productos</h4>
-            <p><Link to="/productos">Todos los productos</Link></p>
             <p className="footer-product-link"><Link to="/productos/leche-entera">Leche Entera Natural</Link></p>
             <p className="footer-product-link"><Link to="/productos/queso-tierno">Queso Tierno Artesanal</Link></p>
             <p className="footer-product-link"><Link to="/productos/natilla">Natilla de la Casa</Link></p>
